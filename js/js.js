@@ -111,8 +111,7 @@ function programa(helados){
         if(localStorage.getItem("producto_usuario") != null){
             carrito = JSON.parse(localStorage.getItem("producto_usuario"));
             renderisado_carrito();
-           
-            mostrar_carrito.innerHTML=`<img class="carrito" src="./img/carrito_left.png" alt="">${carrito.length}`;
+            mostrar_carrito.innerHTML=`<img class="carrito" src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
         }else{
             mostrar_carrito.innerHTML=`<img class="carrito" src="./img/carrito_left.png" alt="">`;
             localStorage.clear();
@@ -137,7 +136,7 @@ function programa(helados){
         }else{
             //carrito.length != 0 ? mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> ${carrito.length}`:  mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `
              if(carrito.length != 0){
-                    mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> ${carrito.length}`;
+                    mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
                 }else{
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `;
                 }  
@@ -208,7 +207,7 @@ function programa(helados){
             finalizado_compra.onclick = envio_info
             
             if(contenedor_carrito_js.className.includes("ocultar")){
-                mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> ${carrito.length}`;
+                mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
             }else{
                 mostrar_carrito.innerHTML =`<img class="carrito"src="./img/cerrar.png" alt="">`
             }   

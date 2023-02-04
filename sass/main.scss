@@ -22,7 +22,6 @@
 
 header{
     display: flex;
-    
     padding: 5px;
     display: flex;
     align-items: center;
@@ -40,7 +39,9 @@ header{
         font-family: 'Mochiy Pop One', sans-serif;
         font-size:50px;
 }   
-
+.cantidad_carrito{
+    position: absolute;
+    transform: translate(40px, -50px);}
 main{
     .contendor_buscar{
         display: flex;
