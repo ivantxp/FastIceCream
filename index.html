@@ -8,74 +8,75 @@
     <link rel="stylesheet" href="./css/estilo.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> <!-- toastify -->
-   
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
-    </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
 <body>
     <header>
-        <img class ="logo" src="./img/logo.png"  alt="logo fic">
-        <h1 class="text_logo">Fast Ice Cream</h1>     
 
-        
+        <img class ="logo" src="./img/logo.png"  alt="logo fic">
+        <h1 class="text_logo">Fast Ice Cream</h1>  
     </header>
     <main id="main_html" >
-        <div class="contendor_buscar">
-            <input class="e" id="input_buscar" type="text" placeholder="Quieres un helado artesanal y lo quieres ya">
-            <button type="button" id="boton_buscar"> Buscar</button>
-            <button type="button" id="limpiar_busqueda">limpiar busqueda</button>
-        </div>
-        <div>
-            <h3>Ordenar por categoria</h3>
-            <ul>
-                <li>
-                    <input type="checkbox" name="chocolate" class="categorias"  id="chocolates">
-                    <label for="chocolates">chocolates</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="Duce de Leches" class="categorias" id="cremas">
-                    <label for="cremas">cremas</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="Duce de Leches" class="categorias" id="dulce_de_leches">
-                    <label for="dulce_de_leches">Dulce de Leches</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="Duce de Leches" class="categorias" id="frutas_al_agua">
-                    <label for="frutas_al_agua">frutas al agua</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="Duce de Leches" class="categorias" id="frutas_a_la_crema">
-                    <label for="frutas_a_la_crema">frutas a la crema</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="Duce de Leches" class="categorias" id="sambayones">
-                    <label for="sambayones">sambayones</label>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h3>Ordenar por precio</h3>
-            <ul>
-                <li>
-                    <input type="checkbox" name="alto" class="Precios" id="alto_bajo">
-                    <label for="alto_bajo">Alto bajo</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="bajo" class="Precios" id="bajo_alto">
-                    <label for="bajo_alto">Bajo alto</label>
-                </li>
-            </ul>
+        <div class="filtros_busqueda"> 
+            <div class="contendor_buscar">
+                <input class="e" id="input_buscar" type="text" placeholder="Quieres un helado artesanal y lo quieres ya">
+                <button type="button" id="boton_buscar"> Buscar</button>
+                <button type="button" id="limpiar_busqueda">limpiar busqueda</button>
+            </div>
+            <div class="filtros">
+                <h3>Ordenar por categoria</h3>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="chocolate" class="categorias"  id="chocolates">
+                        <label for="chocolates">chocolates</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Duce de Leches" class="categorias" id="cremas">
+                        <label for="cremas">cremas</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Duce de Leches" class="categorias" id="dulce_de_leches">
+                        <label for="dulce_de_leches">Dulce de Leches</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Duce de Leches" class="categorias" id="frutas_al_agua">
+                        <label for="frutas_al_agua">frutas al agua</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Duce de Leches" class="categorias" id="frutas_a_la_crema">
+                        <label for="frutas_a_la_crema">frutas a la crema</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Duce de Leches" class="categorias" id="sambayones">
+                        <label for="sambayones">sambayones</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="precios">
+                <h3>Ordenar por precio</h3>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="alto" class="Precios" id="alto_bajo">
+                        <label for="alto_bajo">Alto bajo</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="bajo" class="Precios" id="bajo_alto">
+                        <label for="bajo_alto">Bajo alto</label>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <button type="button" id="mostrar_carrito" class="carrito_boton" >cacccccccrrito</button>  
+        
         <div id="contenedor_carrito" class="ocultar">
-          
+
         </div>           
         <section class="productos" id="contenedor_principal" >
         </section>
+        <button type="button" id="mostrar_carrito" class="carrito_boton" >cacccccccrrito</button>  
+
     </main>
     
     <footer>
@@ -87,6 +88,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/js.js"></script>
-   
 </body>
 </html>

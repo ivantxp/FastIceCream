@@ -25,9 +25,7 @@ function programa(helados){
     //let filtro_check_precios=[];
     //let busqueda_con_check  ="";
     let busqueda = "";
-
     //let cuerpo = document.getElementById("main_html");
-
     let boton_buscar_js = document.getElementById("boton_buscar");
     let contenedor_principal = document.getElementById("contenedor_principal");
 

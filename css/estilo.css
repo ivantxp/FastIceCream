@@ -3,18 +3,6 @@
   margin: 0;
 }
 
-#contenedor_carrito {
-  background-color: rgb(204, 222, 254);
-}
-
-#mostrar_carrito {
-  all: unset;
-}
-#mostrar_carrito img {
-  width: 50px;
-  height: 50px;
-}
-
 .ocultar {
   display: none;
 }
@@ -28,6 +16,9 @@ header {
   background-size: auto auto;
   background-repeat: repeat;
   height: 120px;
+  width: 100%;
+  position: sticky;
+  top: 0;
 }
 header .logo {
   width: 170px;
@@ -40,33 +31,35 @@ header .logo {
   font-size: 50px;
 }
 
-.cantidad_carrito {
-  position: absolute;
-  transform: translate(40px, -50px);
+main .filtros_busqueda {
+  background-color: #00aa14;
 }
-
-main .contendor_buscar {
+main .filtros_busqueda .contendor_buscar {
   display: flex;
   justify-content: center;
   height: 60px;
   align-items: center;
 }
-main .contendor_buscar #input_buscar {
+main .filtros_busqueda .contendor_buscar #input_buscar {
   width: 60%;
   height: 30px;
 }
-main div ul {
+main .filtros_busqueda .filtros ul {
   display: flex;
   list-style: none;
 }
-main .form_crear_cuenta {
+main .filtros_busqueda .filtros ul li {
+  margin: 0 10px;
+}
+main .filtros_busqueda .precios ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgb(30, 165, 249);
-  position: absolute;
-  padding: 50px;
-  right: 0px;
+  list-style: none;
+}
+main .filtros_busqueda .precios ul li {
+  margin: 0 10px;
+}
+main #contenedor_carrito {
+  background-color: aqua;
 }
 main #contenedor_principal {
   display: flex;
@@ -116,6 +109,28 @@ main #contenedor_principal .articulo .fruta_agua {
 }
 main #contenedor_principal .articulo .sambayon {
   background-color: rgb(244, 161, 8);
+}
+main #mostrar_carrito {
+  all: unset;
+  position: fixed;
+  margin: 5px;
+  top: 0;
+  right: 0;
+  border-radius: 5px;
+  background-color: antiquewhite;
+}
+main #mostrar_carrito img {
+  width: 70px;
+  margin: 2px;
+}
+main #mostrar_carrito .cantidad_carrito {
+  position: absolute;
+  transform: translate(55px, -75px);
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}
+main :hover {
+  background-color: #00aa14;
 }
 
 .ventana_finalizado_comprar {

@@ -1,21 +1,8 @@
 *{
     padding: 0;
     margin: 0;
-    //border: solid red .1px;
 }   
-//https://www.deathwishcoffee.com/products/gingerdead-coffee
-#contenedor_carrito{
-    background-color: rgb(204, 222, 254)
-};
 
-#mostrar_carrito{
-    all: unset; 
-   
-    img{
-        width: 50px;
-        height: 50px;
-    }
-}
 .ocultar{ 
     display: none;
 }
@@ -29,6 +16,9 @@ header{
     background-size: auto auto;
     background-repeat: repeat;
     height: 120px;
+    width: 100%;
+    position:sticky;
+    top: 0;
     .logo{
         width:170px ;
         transform:translate(0,20px);
@@ -39,35 +29,41 @@ header{
         font-family: 'Mochiy Pop One', sans-serif;
         font-size:50px;
 }   
-.cantidad_carrito{
-    position: absolute;
-    transform: translate(40px, -50px);}
+
 main{
-    .contendor_buscar{
-        display: flex;
-        justify-content: center;
-        
-        height:60px;
-        align-items: center;
-        #input_buscar{
-            width: 60%;
-            height: 30px;
+    .filtros_busqueda{
+        background-color: #00aa14;
+        .contendor_buscar{
+            display: flex;
+            justify-content: center;
+            height:60px;
+            align-items: center;
+            #input_buscar{
+                width: 60%;
+                height: 30px;
+            }
+        }
+        .filtros{
+            ul{
+                display: flex;
+                list-style: none;
+                li{
+                    margin: 0 10px;
+                }
+            }
+        }   
+        .precios{
+            ul{
+                display: flex;
+                list-style: none;
+                li{
+                    margin:  0 10px;
+                }
+            }
         }
     }
-    div{
-        ul{
-        display: flex;
-        list-style: none;
-        }
-    }
-    .form_crear_cuenta{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(30, 165, 249,);
-        position: absolute;
-        padding: 50px;
-        right: 0px;
+    #contenedor_carrito{
+        background-color: aqua;
     }
     #contenedor_principal{
         display: flex;
@@ -107,9 +103,36 @@ main{
             .fruta_agua{background-color:rgb(8, 145, 140)};
             .sambayon{background-color:rgb(244, 161, 8)};
         }
+    }   
+    #mostrar_carrito{
+        all: unset; 
+        position: fixed;
+        margin: 5px;
+        top:0;
+        right: 0;
+        border-radius: 5px;
+        background-color: antiquewhite;
+        img{
+            width: 70px;
+            margin: 2px;
+        }
+        .cantidad_carrito{
+            position: absolute;
+            transform: translate(55px, -75px);
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+        }
+        
+    }
+    & :hover{
+        background-color: #00aa14;
     }
     
+    
 }
+
+//https://www.deathwishcoffee.com/products/gingerdead-coffee
+
 
 
 .ventana_finalizado_comprar{
@@ -126,7 +149,3 @@ main{
         border-radius: 5px;}
         color: #00aa14;
     }
-
-
-
-
