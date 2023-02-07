@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    //border: solid .5px red;
 }   
 
 .ocultar{ 
@@ -8,29 +9,47 @@
 }
 
 header{
-    display: flex;
     padding: 5px;
     display: flex;
     align-items: center;
     background-image: url("../img/fondo2.jpg");
     background-size: auto auto;
     background-repeat: repeat;
-    height: 120px;
     width: 100%;
     position:sticky;
     top: 0;
     .logo{
-        width:170px ;
-        transform:translate(0,20px);
+        width:100px ;
         }
-    } 
     .text_logo{
         color: rgb(144, 54, 117);
         font-family: 'Mochiy Pop One', sans-serif;
         font-size:50px;
+    }
+
 }   
 
 main{
+    #mostrar_carrito{
+        all: unset; 
+        position: fixed;
+        top:30px;
+        right: 15px;
+        z-index: 100;
+        img{
+            width: 70px;
+        }
+        .cantidad_carrito{
+            position: absolute;
+            transform: translate(55px, -75px);
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+        } 
+        &:hover{
+            
+                transform: translate(0,-2px);
+        }
+    } 
     .filtros_busqueda{
         background-color: #00aa14;
         .contendor_buscar{
@@ -63,7 +82,20 @@ main{
         }
     }
     #contenedor_carrito{
-        background-color: aqua;
+        position:absolute;
+        height:100vw;
+        width: 100vw;
+        background-color: #00000067;
+        #sub_contenedor{
+            width: 350px;
+            margin: 0 auto ;
+            background-color: aqua;
+            padding: 20px;
+            .articulo_carrito{
+                display: flex;
+                margin: 5px;
+            }
+        }
     }
     #contenedor_principal{
         display: flex;
@@ -104,31 +136,6 @@ main{
             .sambayon{background-color:rgb(244, 161, 8)};
         }
     }   
-    #mostrar_carrito{
-        all: unset; 
-        position: fixed;
-        margin: 5px;
-        top:0;
-        right: 0;
-        border-radius: 5px;
-        background-color: antiquewhite;
-        img{
-            width: 70px;
-            margin: 2px;
-        }
-        .cantidad_carrito{
-            position: absolute;
-            transform: translate(55px, -75px);
-            font-size: 30px;
-            color: rgb(255, 255, 255);
-        }
-        
-    }
-    & :hover{
-        background-color: #00aa14;
-    }
-    
-    
 }
 
 //https://www.deathwishcoffee.com/products/gingerdead-coffee

@@ -8,29 +8,44 @@
 }
 
 header {
-  display: flex;
   padding: 5px;
   display: flex;
   align-items: center;
   background-image: url("../img/fondo2.jpg");
   background-size: auto auto;
   background-repeat: repeat;
-  height: 120px;
   width: 100%;
   position: sticky;
   top: 0;
 }
 header .logo {
-  width: 170px;
-  transform: translate(0, 20px);
+  width: 100px;
 }
-
-.text_logo {
+header .text_logo {
   color: rgb(144, 54, 117);
   font-family: "Mochiy Pop One", sans-serif;
   font-size: 50px;
 }
 
+main #mostrar_carrito {
+  all: unset;
+  position: fixed;
+  top: 30px;
+  right: 15px;
+  z-index: 100;
+}
+main #mostrar_carrito img {
+  width: 70px;
+}
+main #mostrar_carrito .cantidad_carrito {
+  position: absolute;
+  transform: translate(55px, -75px);
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}
+main #mostrar_carrito:hover {
+  transform: translate(0, -2px);
+}
 main .filtros_busqueda {
   background-color: #00aa14;
 }
@@ -59,7 +74,20 @@ main .filtros_busqueda .precios ul li {
   margin: 0 10px;
 }
 main #contenedor_carrito {
+  position: absolute;
+  height: 100vw;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4039215686);
+}
+main #contenedor_carrito #sub_contenedor {
+  width: 350px;
+  margin: 0 auto;
   background-color: aqua;
+  padding: 20px;
+}
+main #contenedor_carrito #sub_contenedor .articulo_carrito {
+  display: flex;
+  margin: 5px;
 }
 main #contenedor_principal {
   display: flex;
@@ -109,28 +137,6 @@ main #contenedor_principal .articulo .fruta_agua {
 }
 main #contenedor_principal .articulo .sambayon {
   background-color: rgb(244, 161, 8);
-}
-main #mostrar_carrito {
-  all: unset;
-  position: fixed;
-  margin: 5px;
-  top: 0;
-  right: 0;
-  border-radius: 5px;
-  background-color: antiquewhite;
-}
-main #mostrar_carrito img {
-  width: 70px;
-  margin: 2px;
-}
-main #mostrar_carrito .cantidad_carrito {
-  position: absolute;
-  transform: translate(55px, -75px);
-  font-size: 30px;
-  color: rgb(255, 255, 255);
-}
-main :hover {
-  background-color: #00aa14;
 }
 
 .ventana_finalizado_comprar {

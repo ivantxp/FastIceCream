@@ -52,8 +52,6 @@ function programa(helados){
     let check_precios_altos = document.getElementById("alto_bajo");
     check_precios_altos.onclick = filtrado_precios_altos;
 
-    let icono_mostrar = `<img src="./img/cerrar.png" alt="">`
-    let icono_cerrar = `<img class="carrito"src="./img/carrito_left.png" alt="">`
     /* const DateTime = luxon.DateTime; //aplicacion de luxon
     const now = DateTime.now()
     console.log(DateTime.fromISO("2017-05-15T20:15:00"))
@@ -122,22 +120,30 @@ function programa(helados){
     }
 
     mostrar_producto(helados)
-    //mostrar_producto(helados);//renderisa la pagina al abrir o refrescar la pagina
-    //        <img class="carrito"src="./img/cerrar.png" alt="">
-    //        <img class="carrito"src="./img/carrito_left.png" alt=""> 
 
+    function disableScroll(){  
+        let x = window.scrollX;
+        let  y = window.scrollY;
+        window.onscroll = function(){ window.scrollTo(x, y) };
+    }
+    
+    function enableScroll(){  
+        window.onscroll = null;
+    }
+    
     function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
         contenedor_principal.classList.toggle("ocultar");
         contenedor_carrito_js.classList.toggle("ocultar");
         if(contenedor_carrito_js.className.includes("ocultar")==false){
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/cerrar.png" alt="">`;
+            disableScroll()
         }else{
-            //carrito.length != 0 ? mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> ${carrito.length}`:  mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `
-             if(carrito.length != 0){
+            if(carrito.length != 0){
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
                 }else{
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `;
                 }  
+                enableScroll()
         }
     };
 
@@ -174,9 +180,9 @@ function programa(helados){
         sub_total = []
         carrito.forEach(({cantidad,precio})=>sub_total.push(cantidad*precio));
         total = sub_total.reduce((a,el)=> a + el,0);
-        carrito.forEach(({id,sabor,cantidad,precio})=> contenedor_carrito_js.innerHTML +=`
-                <div>
-                    <p> ${id}) sabor:${sabor} </p>
+        carrito.forEach(({id,sabor,cantidad,precio},el)=> contenedor_carrito_js.innerHTML +=`
+                <div class="articulo_carrito">
+                    <p> ${el+1}) sabor:${sabor} </p>
                     <button  class ="class_boton_restar" id=restar${id}>- </button>   
                     <span> ${cantidad} </span>
                     <button  class ="class_boton_agregar" id=sumar${id}> + </button>   
@@ -186,10 +192,13 @@ function programa(helados){
             `
         );
         if(carrito!=""){
-            contenedor_carrito_js.innerHTML +=`
-                    <div>
-                        <span> Total:${total} </span>
-                        <button  id=finalizar_compra>Finalizar comprar</button>
+            contenedor_carrito_js.innerHTML =`
+                    <div id="sub_contenedor"> 
+                        ${contenedor_carrito_js.innerHTML}
+                        <div>
+                            <span> Total:${total} </span>
+                            <button  id=finalizar_compra>Finalizar comprar</button>
+                        </div>
                     </div>
                 `;
             let botones_sumar = document.querySelectorAll(`.class_boton_agregar`);   
