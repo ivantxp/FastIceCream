@@ -68,7 +68,7 @@ function programa(helados){
         contenedor_principal.innerHTML = "";
         productos.forEach(({id,categoria,img,sabor,descripcion,precio})=>{
             let contenedor_producto = document.createElement("article");
-            contenedor_producto.className = "articulo";
+            contenedor_producto.className = "articulo_conedor";
             let color_informacion ;
             if(categoria == "chocolates"){
                 color_informacion = "chocolate";
@@ -91,7 +91,7 @@ function programa(helados){
                             ${descripcion}
                         </p>
                         <div>
-                            <h4>${precio}$
+                            <h4>$${precio}
                             </h4>
                             <button class="boton_agregar" id=elimnar${id}> agregar</button>
                         </div>
@@ -145,6 +145,7 @@ function programa(helados){
                 }  
                 enableScroll()
         }
+        
     };
 
     
@@ -153,7 +154,7 @@ function programa(helados){
     function limpiesa_input(){
         busqueda = "";
         input_buscar_html.value = "";
-        filtro == "" ? mostrar_producto(helados): filtrado_check();
+        filtro_check == "" ? mostrar_producto(helados): filtrado_check();
     /*      if(filtro_check == ""){
             mostrar_producto(helados);
             }else{
@@ -178,11 +179,12 @@ function programa(helados){
 
     function renderisado_carrito(){
         sub_total = []
+        contenedor_carrito_js.innerHTML = ""
         carrito.forEach(({cantidad,precio})=>sub_total.push(cantidad*precio));
         total = sub_total.reduce((a,el)=> a + el,0);
         carrito.forEach(({id,sabor,cantidad,precio},el)=> contenedor_carrito_js.innerHTML +=`
                 <div class="articulo_carrito">
-                    <p> ${el+1}) sabor:${sabor} </p>
+                    <p> ${el+1})${sabor} </p>
                     <button  class ="class_boton_restar" id=restar${id}>- </button>   
                     <span> ${cantidad} </span>
                     <button  class ="class_boton_agregar" id=sumar${id}> + </button>   
@@ -226,6 +228,7 @@ function programa(helados){
                     `;
         }   
     };
+
     function filtrado_precios_altos(){
         if(check_precios_altos.checked){
             helados.sort((x, y) => y.precio - x.precio);
@@ -390,8 +393,8 @@ function programa(helados){
         carrito.forEach(({id,sabor,cantidad,precio})=>{ text_swal +=`\n ${id} sabor:${sabor}${cantidad}  ${cantidad * precio} \n `}) 
         text_swal +=  `\nTotal:${total}  `  */
         let html_insert="" 
-        carrito.forEach(({id,sabor,cantidad,precio})=> html_insert +=`
-                            <p> ${id}) ${sabor} ${cantidad} SubTtotal ${cantidad * precio} </p>
+        carrito.forEach(({id,sabor,cantidad,precio},el)=> html_insert +=`
+                            <p> ${el+1}) ${sabor} ${cantidad} SubTtotal ${cantidad * precio} </p>
                     `) + `<div></div><p> Totol: ${total}</p>>`
         Swal.fire({
             title: 'Quiere confirmar su compra?',
@@ -409,9 +412,10 @@ function programa(helados){
             }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                    //title: 'Sweet!',
-                    text: 'Agradesemos su compra, su pedido esta en camino',
-                    imageUrl: './img/enviado.png',
+                    title: 'Agradecemos su compra!!!',
+                    text: 'Su pedido esta en camino',
+                    //imageUrl: './img/enviado.png',
+                    imageUrl:'./img/logo.png',
                     imageWidth: 400,
                     imageHeight: 400,
                     imageAlt: 'Custom image',

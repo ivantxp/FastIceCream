@@ -1,16 +1,16 @@
 [   
     {"id":1,
     "categoria": "cremas",
-    "sabor": "crema Granizada",
-    "descripcion":"helado de crema granizada con trozos de chocolate",
+    "sabor": "Crema Granizada",
+    "descripcion":"Helado de crema granizada con trozos de chocolate .",
     "img":"./img/sabores/crema_granizada.jpg",
     "precio":120
     },
     
     {"id":2,
     "categoria": "cremas",
-    "sabor": "coco con dulce deleche",
-    "descripcion":"helado elaborado con coco macerado, veteado con dulce de leche natural",
+    "sabor": "Coco con dulce de leche",
+    "descripcion":"Helado elaborado con coco macerado, veteado con dulce de leche natural.",
     "img":"./img/sabores/coco_con_dulce_deleche.jpg",
     "precio":130
     },
@@ -18,23 +18,23 @@
     {"id":3,
     "categoria": "cremas",
     "sabor": "Crema Tramontana",
-    "descripcion":"helado de crema america veteado con dulcedeleche natural y sembrado con micro galletitas crocantes bañadas en chococlate",
+    "descripcion":"Helado de crema americana, con dulce de leche y galletitas crocantes bañadas en chococlate.",
     "img":"./img/sabores/crema_tramontana.jpg",    
     "precio":100
     },
     
     {"id":4,
     "categoria": "cremas",
-    "sabor": "crema con avellanas y cacao",
-    "descripcion":"crema blanca veteada con mezcla de avellanas y chocolate",
+    "sabor": "Crema con avellanas y cacao",
+    "descripcion":"Crema blanca veteada con mezcla de avellanas y chocolate.",
     "img":"./img/sabores/crema_avellanas_cacao.jpg",
     "precio":130
     },
     
     {"id":5,
     "categoria": "cremas",
-    "sabor": "cremas con pasas al Ron",
-    "descripcion": "helado de vainilla sembrado con pasas de uva macerado al ron",
+    "sabor": "Cremas con pasas al Ron",
+    "descripcion": "Helado de vainilla cubierto con pasas de uva macerado al Ron.",
     "img":"./img/sabores/cremas_pasar_ron.jpg",
     "precio":120
     },
@@ -42,15 +42,15 @@
     {"id":6,
     "categoria": "cremas",
     "sabor": "Vainilla",
-    "descripcion":"helado elaborado con vainilla natural de Madagascar",
+    "descripcion":"Helado elaborado con vainilla natural de Madagascar.",
     "img":"./img/sabores/vainilla.jpg",
     "precio":100
     },
     
     {"id":7,
     "categoria": "cremas",
-    "sabor": "Tiramisu",
-    "descripcion":"helado inspirado en el tradicional postre italiano",
+    "sabor": "Tiramisú",
+    "descripcion":"Helado inspirado en el tradicional postre italiano.",
     "img":"./img/sabores/Tiramisu.jpg",
     "precio":110
     },
@@ -58,127 +58,127 @@
     {"id":8,
     "categoria": "chocolates",
     "sabor": "chocolate",
-    "descripcion":"Helado de chocolate clasico elaborado con  lps mejores cacaos sudamericanos",
+    "descripcion":"Helado de chocolate clásico elaborado con los mejores cacaos sudamericanos.",
     "img":"./img/sabores/chocolate.jpg",
     "precio":100
     },
     
     {"id":9,
     "categoria": "chocolates",
-    "sabor": "chocolate almendrado",
-    "descripcion":"helado de chocolate sembrado con almendras suavemente tostadas",
+    "sabor": "Chocolate almendrado",
+    "descripcion":"Helado de chocolate con un toque de almendras suavemente tostadas.",
     "img":"./img/sabores/chocolate_almendrado.jpg",
     "precio":120
     },
     
     {"id":10,
     "categoria": "chocolates",
-    "sabor": "chocolate a la italiana",
-    "descripcion":"helado de chocolate sembrado con pasas de uva nueces y granizadoo con trozos de chocolate",
+    "sabor": "Chocolate a la italiana",
+    "descripcion":"Helado de chocolate con pasas de uva, nueces y granizado con trozos de chocolate.",
     "img":"./img/sabores/chocolate_a_la_italiana.jpg",
     "precio":120   
     },
     
     {"id":11,
     "categoria": "chocolates",
-    "sabor": "chocolate holandes",
-    "descripcion":"helado de chocolate amargo con cacaos africanos procesado e los paises bajos",
+    "sabor": "Chocolate holandés",
+    "descripcion":"Helado de chocolate amargo con cacao tradicional.",
     "img":"./img/sabores/chocolate_holandes.jpg",
     "precio": 120
     },
     
     {"id":12,
     "categoria": "dulce de leches",
-    "sabor": "dulce de leche",
-    "descripcion":"helado de dulce de leche",
+    "sabor": "Dulce de leche",
+    "descripcion":"Helado de dulce de leche.",
     "img":"./img/sabores/dulce_deleche.jpg",
     "precio":100
     },
     
     {"id":13,
     "categoria": "dulce de leches",
-    "sabor": "dulce de leche granizado",
-    "descripcion":"helado de dulcedeleche, granizado con trozos de chocolate",
+    "sabor": "Dulce de leche granizado",
+    "descripcion":"Helado de dulce de leche, granizado con trozos de chocolate.",
     "img":"./img/sabores/dulce_deleche_granizado.jpg",
     "precio":120
     },
     
     {"id":14,
     "categoria": "dulce de leches",
-    "sabor": "manjar de nuez",
-    "descripcion":"helados de dulce de leche sembrado con nuez",
+    "sabor": "Manjar de nuez",
+    "descripcion":"Helado de dulce de leche con nuez.",
     "img":"./img/sabores/manjar_nuez.jpg",
     "precio":130
     },
     
     {"id":15,
     "categoria": "frutas al agua",
-    "sabor": "limon",
-    "descripcion":"helado de limon natural al agua",
+    "sabor": "Limón",
+    "descripcion":"Helado de limón natural al agua.",
     "img":"./img/sabores/limon.jpg",
     "precio":90
     },
     
     {"id":16,
     "categoria": "frutas al agua",
-    "sabor": "frutilla",
-    "descripcion":"helado de frutilla natural al agua",
+    "sabor": "Frutilla",
+    "descripcion":"Helado de frutilla orgánica al agua",
     "img":"./img/sabores/frutilla.jpg",
     "precio":90
     },
     
     {"id":17,
     "categoria": "frutas al agua",
-    "sabor": "anana",
-    "descripcion":"helado de anana natural al agua",
+    "sabor": "Ananá",
+    "descripcion":"Helado de ananá tropical al agua.",
     "img":"./img/sabores/anana.jpg",
     "precio":90
     },
     
     {"id":18,
     "categoria": "frutas al agua",
-    "sabor": "maracuya",
-    "descripcion":"helado de maracuya naturañ al agua",
+    "sabor": "Maracuyá",
+    "descripcion":"Helado de maracuyá natural al agua.",
     "img":"./img/sabores/maracuya.jpg",
     "precio":90
     },
     
     {"id":19,
     "categoria": "frutas al agua",
-    "sabor": "mango",
-    "descripcion":"refrescante helado elborado con autenticos mangos de ecuador",
+    "sabor": "Mango",
+    "descripcion":"Refrescante helado elaborado con auténticos mangos de ecuador.",
     "img":"./img/sabores/mango.jpg",
     "precio":90
     },
     
     {"id":20,
     "categoria": "frutas a la crema",
-    "sabor": "frutilla a la crema",
-    "descripcion":"helado de frutilla a la crema",
+    "sabor": "Frutilla a la crema",
+    "descripcion":"Helado de frutilla a la crema.",
     "img":"./img/sabores/frutillas_crema.jpg",
     "precio":110
     },
     
     {"id":21,
     "categoria": "frutas a la crema",
-    "sabor": "frutillas con crema chantilly",
-    "descripcion":"helados de crema chantilly sembrado con frutillas",
+    "sabor": "Frutillas con crema chantilly",
+    "descripcion":"Helados de crema chantilly acompañado con frutillas.",
     "img":"./img/sabores/frutillas_crema_chantilly.jpg",
     "precio":120
     },
     
     {"id":22,
     "categoria": "frutas a la crema",
-    "sabor": "pasion de maracuya",
-    "descripcion":"elaborado sobre una base de crema americana,con equilibrado toque de queso tipo mascarpone y aderezado con pure de maracuya",
+    "sabor": "Pasión de maracuyá",
+    "descripcion":"Elaborado con una base de crema americana, equilibrado queso mascarpone y aderezado con puré de maracuyá.",
     "img":"./img/sabores/pasion_maracuya.jpg",
     "precio":110
     },
     
     {"id":23,
     "categoria": "frutas a la crema",
-    "sabor": "lemon pie",
-    "descripcion":"El tradicional postre Lemon pie, hecho helado",
+    "sabor": "Lemon pie",
+    "descripcion":"El tradicional postre Lemon pie, hecho helado.",
     "img":"./img/sabores/lemon_pie.jpg",
     "precio":110
     },
@@ -186,39 +186,39 @@
     {"id":24,
     "categoria": "frutas a la crema",
     "sabor": "Banana split",
-    "descripcion":"helado de banana a la crema, granizado con trozos de chocolate y veteado con dulce de leche natural",
+    "descripcion":"Helado de banana a la crema, granizado con trozos de chocolate y veteado con dulce de leche natural.",
     "img":"./img/sabores/Banana_split.jpg",
     "precio":110
     },
     
     {"id":25,
     "categoria": "frutas a la crema",
-    "sabor": "pasion de frutos rojos",
-    "descripcion":"una combinacion de frutos rojos, sobre uan base de delicada crema, con un toque de queso tipo mascarpone",
+    "sabor": "Pasión de frutos rojos",
+    "descripcion":"Combinación de frutos rojos, sobre una base de crema, con queso mascarpone.",
     "img":"./img/sabores/pasion_de_frutos_rojos.jpg",
     "precio":120
     },
     
     {"id":26,
     "categoria": "sambayones",
-    "sabor": "sambayon",
-    "descripcion":"Crema helada elaborada en base a lla receta Italina de dulce de sambayon",
+    "sabor": "Sambayón",
+    "descripcion":"Crema helada elaborada en base a la receta Italina de dulce de sambayón.",
     "img":"./img/sabores/sambayon.jpg",
     "precio":100
     },
 
     {"id":27,
     "categoria": "sambayones",
-    "sabor": "sambayon con cerezas",
-    "descripcion":"helado de sambay sembrado con cerezas enteras confitadas",
+    "sabor": "Sambayón con cerezas",
+    "descripcion":"Helado de sambayón con cerezas enteras confitadas.",
     "img":"./img/sabores/sambayon_cerezas.jpg",
     "precio":120
     },
     
     {"id":28,
-        "categoria": "sambayones",
-    "sabor": "Super sambayon",
-    "descripcion":"helado de sambayon elaborado con la receta especial de nuestro Maestro Heladero",
+    "categoria": "sambayones",
+    "sabor": "Super sambayón",
+    "descripcion":"Helado de sambayón elaborado con la receta especial de nuestro Maestro Heladero.",
     "img":"./img/sabores/super_sambayon.jpg",
     "precio":120
     }

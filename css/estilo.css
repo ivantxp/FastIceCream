@@ -7,7 +7,14 @@
   display: none;
 }
 
-header {
+body {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-areas: "filtros encabesado" "filtros productos ";
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto auto;
+}
+body header {
   padding: 5px;
   display: flex;
   align-items: center;
@@ -15,127 +22,151 @@ header {
   background-size: auto auto;
   background-repeat: repeat;
   width: 100%;
+  height: 70px;
   position: sticky;
   top: 0;
 }
-header .logo {
+body header .logo {
   width: 100px;
 }
-header .text_logo {
+body header .text_logo {
   color: rgb(144, 54, 117);
-  font-family: "Mochiy Pop One", sans-serif;
+  font-family: "Knewave", cursive;
   font-size: 50px;
+  font-weight: lighter;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
 }
-
-main #mostrar_carrito {
+body .filtros_busqueda {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  height: 100%;
+  top: 0;
+  background-image: url("../img/fondo2.jpg");
+  background-size: auto auto;
+  background-repeat: repeat;
+  padding: 0 8px;
+  color: white;
+}
+body .filtros_busqueda .filtros {
+  padding: 70px 0 0 0;
+}
+body .filtros_busqueda .filtros h3, body .filtros_busqueda .precios h3 {
+  margin: 15px 0 5px;
+}
+body .filtros_busqueda .filtros ul, body .filtros_busqueda .precios ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+body .filtros_busqueda .filtros ul li, body .filtros_busqueda .precios ul li {
+  margin: 0 10px;
+}
+body .filtros_busqueda #mostrar_carrito {
   all: unset;
-  position: fixed;
-  top: 30px;
-  right: 15px;
-  z-index: 100;
+  width: 160px;
 }
-main #mostrar_carrito img {
-  width: 70px;
+body .filtros_busqueda #mostrar_carrito img {
+  width: 100%;
+  height: 100%;
 }
-main #mostrar_carrito .cantidad_carrito {
+body .filtros_busqueda #mostrar_carrito .cantidad_carrito {
   position: absolute;
-  transform: translate(55px, -75px);
+  transform: translate(0, 0);
   font-size: 30px;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
 }
-main #mostrar_carrito:hover {
+body .filtros_busqueda #mostrar_carrito:hover {
   transform: translate(0, -2px);
 }
-main .filtros_busqueda {
-  background-color: #00aa14;
-}
-main .filtros_busqueda .contendor_buscar {
+body main .contendor_buscar {
   display: flex;
   justify-content: center;
-  height: 60px;
   align-items: center;
 }
-main .filtros_busqueda .contendor_buscar #input_buscar {
-  width: 60%;
-  height: 30px;
+body main .contendor_buscar #input_buscar {
+  width: 300px;
+  height: 25px;
 }
-main .filtros_busqueda .filtros ul {
-  display: flex;
-  list-style: none;
-}
-main .filtros_busqueda .filtros ul li {
-  margin: 0 10px;
-}
-main .filtros_busqueda .precios ul {
-  display: flex;
-  list-style: none;
-}
-main .filtros_busqueda .precios ul li {
-  margin: 0 10px;
-}
-main #contenedor_carrito {
+body main #contenedor_carrito {
   position: absolute;
   height: 100vw;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.4039215686);
 }
-main #contenedor_carrito #sub_contenedor {
+body main #contenedor_carrito #sub_contenedor {
   width: 350px;
   margin: 0 auto;
   background-color: aqua;
   padding: 20px;
 }
-main #contenedor_carrito #sub_contenedor .articulo_carrito {
+body main #contenedor_carrito #sub_contenedor .articulo_carrito {
   display: flex;
   margin: 5px;
 }
-main #contenedor_principal {
+body main #contenedor_principal {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-main #contenedor_principal .articulo {
+body main #contenedor_principal .articulo_conedor {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(160, 240, 40);
   border-radius: 5px;
   width: 400px;
-  padding: 5px;
-  margin: 10px 20px;
+  height: 140px;
+  margin: 5px 10px;
   padding: 7px;
 }
-main #contenedor_principal .articulo img {
-  width: 120px;
-  height: 120px;
+body main #contenedor_principal .articulo_conedor img {
+  width: 130px;
+  height: 138px;
   border-radius: 5px 0 0 5px;
 }
-main #contenedor_principal .articulo .informacion {
+body main #contenedor_principal .articulo_conedor .informacion {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+  height: 130px;
   border-radius: 0 5px 5px 0;
-  padding: 5px;
+  padding: 4px;
 }
-main #contenedor_principal .articulo .informacion div {
+body main #contenedor_principal .articulo_conedor .informacion .productos {
+  font-family: "Rock Salt", cursive;
+  font-stretch: ultra-condensed;
+  font-size: 17px;
+  line-height: 25px;
+  border-bottom: solid black 1px;
+  color: rgb(0, 0, 0);
+}
+body main #contenedor_principal .articulo_conedor .informacion p {
+  margin: auto;
+  font-family: "Itim", cursive;
+  font-size: 17px;
+  border-bottom: solid black 1px;
+  margin: 5px 0;
+}
+body main #contenedor_principal .articulo_conedor .informacion div {
   display: flex;
   justify-content: space-between;
 }
-main #contenedor_principal .articulo .chocolate {
-  background-color: rgb(42, 39, 39);
+body main #contenedor_principal .articulo_conedor .chocolate {
+  background-color: rgb(224, 218, 218);
 }
-main #contenedor_principal .articulo .dulce_leche {
+body main #contenedor_principal .articulo_conedor .dulce_leche {
   background-color: rgb(255, 200, 155);
 }
-main #contenedor_principal .articulo .crema {
+body main #contenedor_principal .articulo_conedor .crema {
   background-color: rgb(255, 222, 160);
 }
-main #contenedor_principal .articulo .frutas_a_la_crema {
+body main #contenedor_principal .articulo_conedor .frutas_a_la_crema {
   background-color: rgb(180, 214, 43);
 }
-main #contenedor_principal .articulo .fruta_agua {
+body main #contenedor_principal .articulo_conedor .fruta_agua {
   background-color: rgb(8, 145, 140);
 }
-main #contenedor_principal .articulo .sambayon {
+body main #contenedor_principal .articulo_conedor .sambayon {
   background-color: rgb(244, 161, 8);
 }
 
@@ -153,6 +184,18 @@ main #contenedor_principal .articulo .sambayon {
   height: 200px;
   margin: auto;
   border-radius: 5px;
+}
+
+header {
+  grid-area: encabesado;
+}
+
+nav {
+  grid-area: filtros;
+}
+
+main {
+  grid-area: productos;
 }
 
 /*# sourceMappingURL=estilo.css.map */
