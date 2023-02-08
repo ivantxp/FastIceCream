@@ -292,6 +292,8 @@ function programa(helados){
     };
 
     function extractor_numero(cadena){//function para extrar el numeros de las clase creadas con js para comparar con los id de array helados
+
+        
         let id_obtenido ="";
         for(i=0; i<cadena.length; i++){
             if(isNaN(cadena[i]) == false){

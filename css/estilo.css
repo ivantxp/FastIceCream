@@ -11,78 +11,92 @@ body {
   overflow-x: hidden;
   display: grid;
   grid-template-areas: "filtros encabesado" "filtros productos ";
-  grid-template-columns: 200px auto;
+  justify-items: center;
+  grid-template-columns: 220px auto;
   grid-template-rows: auto auto;
+  background-image: url("../img/fondo2.jpg");
+  background-attachment: fixed;
 }
 body header {
-  padding: 5px;
-  display: flex;
-  align-items: center;
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto auto;
   background-image: url("../img/fondo2.jpg");
   background-size: auto auto;
   background-repeat: repeat;
-  width: 100%;
-  height: 70px;
   position: sticky;
   top: 0;
-}
-body header .logo {
-  width: 100px;
+  width: 100%;
+  padding: 5px 5px;
 }
 body header .text_logo {
   color: rgb(144, 54, 117);
   font-family: "Knewave", cursive;
-  font-size: 50px;
+  font-size: 70px;
   font-weight: lighter;
   -webkit-text-stroke: 2px rgb(255, 255, 255);
 }
-body .filtros_busqueda {
+body .nav_filtros {
   display: flex;
   flex-direction: column;
   position: sticky;
-  height: 100%;
+  height: 100vh;
   top: 0;
-  background-image: url("../img/fondo2.jpg");
-  background-size: auto auto;
-  background-repeat: repeat;
-  padding: 0 8px;
   color: white;
 }
-body .filtros_busqueda .filtros {
-  padding: 70px 0 0 0;
+body .nav_filtros .filtros {
+  padding: 150px 0 0 0;
 }
-body .filtros_busqueda .filtros h3, body .filtros_busqueda .precios h3 {
+body .nav_filtros .filtros h3, body .nav_filtros .precios h3 {
   margin: 15px 0 5px;
+  font-family: "Itim", cursive;
+  font-size: 20px;
+  color: rgb(255, 158, 226);
 }
-body .filtros_busqueda .filtros ul, body .filtros_busqueda .precios ul {
+body .nav_filtros .filtros ul, body .nav_filtros .precios ul {
   display: flex;
   flex-direction: column;
   list-style: none;
 }
-body .filtros_busqueda .filtros ul li, body .filtros_busqueda .precios ul li {
+body .nav_filtros .filtros ul li, body .nav_filtros .precios ul li {
   margin: 0 10px;
+  font-family: "Itim", cursive;
+  color: rgb(250, 234, 154);
 }
-body .filtros_busqueda #mostrar_carrito {
+body .nav_filtros #mostrar_carrito {
   all: unset;
-  width: 160px;
+  width: 150px;
+  margin: auto auto 20px auto;
 }
-body .filtros_busqueda #mostrar_carrito img {
+body .nav_filtros #mostrar_carrito img {
   width: 100%;
   height: 100%;
 }
-body .filtros_busqueda #mostrar_carrito .cantidad_carrito {
+body .nav_filtros #mostrar_carrito .cantidad_carrito {
   position: absolute;
-  transform: translate(0, 0);
+  transform: translate(115px, -155px);
   font-size: 30px;
-  color: rgb(255, 0, 0);
+  color: rgb(144, 54, 117);
+  font-family: "Knewave", cursive;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
 }
-body .filtros_busqueda #mostrar_carrito:hover {
+body .nav_filtros #mostrar_carrito:hover {
   transform: translate(0, -2px);
+}
+body main {
+  justify-self: stretch;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 255, 255);
+  width: 98%;
+  min-height: 80vh;
+  margin: 0 0 25px 0;
+  border-radius: 10px;
 }
 body main .contendor_buscar {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px 0 0 0;
 }
 body main .contendor_buscar #input_buscar {
   width: 300px;
@@ -113,9 +127,9 @@ body main #contenedor_principal .articulo_conedor {
   display: flex;
   justify-content: space-around;
   border-radius: 5px;
-  width: 400px;
+  width: 390px;
   height: 140px;
-  margin: 5px 10px;
+  margin: 5px 5px;
   padding: 7px;
 }
 body main #contenedor_principal .articulo_conedor img {
@@ -128,14 +142,14 @@ body main #contenedor_principal .articulo_conedor .informacion {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 130px;
+  height: 128px;
   border-radius: 0 5px 5px 0;
-  padding: 4px;
+  padding: 5px;
 }
 body main #contenedor_principal .articulo_conedor .informacion .productos {
   font-family: "Rock Salt", cursive;
   font-stretch: ultra-condensed;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 25px;
   border-bottom: solid black 1px;
   color: rgb(0, 0, 0);
