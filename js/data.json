@@ -186,7 +186,7 @@
     {"id":24,
     "categoria": "frutas a la crema",
     "sabor": "Banana split",
-    "descripcion":"Helado de banana a la crema, granizado con trozos de chocolate y veteado con dulce de leche natural.",
+    "descripcion":"Helado de banana a la crema, granizado con trozos de chocolate y veteado con dulce de leche.",
     "img":"./img/sabores/Banana_split.jpg",
     "precio":110
     },

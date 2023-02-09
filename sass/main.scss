@@ -68,7 +68,6 @@ body{
                     input{
                         margin:5px ;
                     }
-
                 }
             }
         }  
@@ -104,21 +103,16 @@ body{
         justify-self: stretch;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(
-            0deg,
-            rgb(240, 242, 252) 0%,
-            rgb(210, 220, 247) 100%
-        );
-        background-blend-mode: normal;
+        background-color: rgb(255, 255, 242);
         width: 98%;
         min-height: 80vh;
         margin: 0 0  25px 0;
         border-radius: 10px;
         .contendor_buscar{
             position:sticky;
-            top:105px;
+            top:108px;
             width: 100%;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 231);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -134,8 +128,7 @@ body{
             #limpiar_busqueda{
                 border: none;
                 background-color:transparent;
-                transform: translate(-20px,0);
-                
+                transform: translate(-130px,2px);
                 img{
                     width: 14px;
                 }
@@ -143,9 +136,10 @@ body{
             #boton_buscar{
                 all: unset;
                 font-family: 'Itim', cursive;
-                font-size: 20px;
-                border-radius: 5px;
-                padding: 5px 10px;
+                font-size: 22px;
+                margin: 0 0 0 10px;
+                border-radius: 10px;
+                padding: 5px 15px;
                 background: linear-gradient(
                     0deg,
                     rgba(138, 165, 255, 1) 12%,
@@ -176,12 +170,15 @@ body{
             height:100vw;
             width: 100vw;
             background-color: #00000067;
-            
+            z-index: 50;
             #sub_contenedor{
                 width: 350px;
                 margin: 0 auto ;
                 background-color: aqua;
                 padding: 20px;
+                #cerrar_carrito{
+                    width: 50px;
+                }
                 .articulo_carrito{
                     display: flex;
                     margin: 5px;

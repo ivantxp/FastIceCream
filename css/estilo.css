@@ -96,8 +96,7 @@ body main {
   justify-self: stretch;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(0deg, rgb(240, 242, 252) 0%, rgb(210, 220, 247) 100%);
-  background-blend-mode: normal;
+  background-color: rgb(255, 255, 242);
   width: 98%;
   min-height: 80vh;
   margin: 0 0 25px 0;
@@ -105,9 +104,9 @@ body main {
 }
 body main .contendor_buscar {
   position: sticky;
-  top: 105px;
+  top: 108px;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 231);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +122,7 @@ body main .contendor_buscar #input_buscar {
 body main .contendor_buscar #limpiar_busqueda {
   border: none;
   background-color: transparent;
-  transform: translate(-20px, 0);
+  transform: translate(-130px, 2px);
 }
 body main .contendor_buscar #limpiar_busqueda img {
   width: 14px;
@@ -131,9 +130,10 @@ body main .contendor_buscar #limpiar_busqueda img {
 body main .contendor_buscar #boton_buscar {
   all: unset;
   font-family: "Itim", cursive;
-  font-size: 20px;
-  border-radius: 5px;
-  padding: 5px 10px;
+  font-size: 22px;
+  margin: 0 0 0 10px;
+  border-radius: 10px;
+  padding: 5px 15px;
   background: linear-gradient(0deg, rgb(138, 165, 255) 12%, rgb(224, 224, 255) 47%, rgb(152, 145, 250) 100%);
   background-blend-mode: normal;
 }
@@ -152,12 +152,16 @@ body main #contenedor_carrito {
   height: 100vw;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.4039215686);
+  z-index: 50;
 }
 body main #contenedor_carrito #sub_contenedor {
   width: 350px;
   margin: 0 auto;
   background-color: aqua;
   padding: 20px;
+}
+body main #contenedor_carrito #sub_contenedor #cerrar_carrito {
+  width: 50px;
 }
 body main #contenedor_carrito #sub_contenedor .articulo_carrito {
   display: flex;

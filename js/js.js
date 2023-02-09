@@ -51,6 +51,8 @@ function programa(helados){
     let mostrar_carrito =document.getElementById("mostrar_carrito");
     mostrar_carrito.onclick =  visualisacion_carrito;
 
+    let cerrar_carrito = ""
+
     let limpiar_busqueda = document.getElementById("limpiar_busqueda");
     limpiar_busqueda.onclick = limpiesa_input;
 
@@ -143,27 +145,7 @@ function programa(helados){
     function enableScroll(){  
         window.onscroll = null;
     }
-    
-    function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
-        contenedor_principal.classList.toggle("ocultar");
-        contenedor_carrito_js.classList.toggle("ocultar");
-        if(contenedor_carrito_js.className.includes("ocultar")==false){
-            mostrar_carrito.innerHTML =`<img class="carrito"src="./img/cerrar.png" alt="">`;
-            disableScroll()
-        }else{
-            if(carrito.length != 0){
-                    mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
-                }else{
-                    mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `;
-                }  
-                enableScroll()
-        }
-        
-    };
-
-    
-
-
+  
     function limpiesa_input(){
         busqueda = "";
         input_buscar_html.value = "";
@@ -191,6 +173,23 @@ function programa(helados){
             filtrado_check();
             };  */
     }
+    
+    function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
+        
+        contenedor_principal.classList.toggle("ocultar");
+        contenedor_carrito_js.classList.toggle("ocultar");
+        if(contenedor_carrito_js.className.includes("ocultar")==false){
+            disableScroll()
+        }else{
+            if(carrito.length != 0){
+                    mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
+                }else{
+                    mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `;
+                }  
+                enableScroll()
+        }
+        
+    };
 
     function renderisado_carrito(){
         sub_total = []
@@ -211,6 +210,7 @@ function programa(helados){
         if(carrito!=""){
             contenedor_carrito_js.innerHTML =`
                     <div id="sub_contenedor"> 
+                        <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
                         ${contenedor_carrito_js.innerHTML}
                         <div>
                             <span> Total:${total} </span>
@@ -218,10 +218,14 @@ function programa(helados){
                         </div>
                     </div>
                 `;
+     
             let botones_sumar = document.querySelectorAll(`.class_boton_agregar`);   
             let botones_restar = document.querySelectorAll(`.class_boton_restar`);    
             let botones_eliminar_articulos = document.querySelectorAll(`.botones_quitar`);
 
+            let sub_conenedor = document.getElementById("cerrar_carrito")
+
+            sub_conenedor.onclick = visualisacion_carrito
             botones_eliminar_articulos.forEach((el)=>el.onclick =elminar_articulo);
             botones_restar.forEach((el)=>el.onclick = restar_cantidad);
             botones_sumar.forEach((el)=>el.onclick = sumar_cantidad);
