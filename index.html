@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
 
-    <!-- fuente texto sub titulos -->
+    <!-- fuente texto titulos -->
     <!-- css--------- font-family: 'Knewave', cursive; -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,8 +28,7 @@
 </head>
 <body>
     <header>
-<!--         <img class ="logo" src="./img/logo.png" alt="logo fic">
- -->        <h1 class="text_logo">Fast Ice Cream</h1> 
+        <h1 class="text_logo">Fast Ice Cream</h1> 
     </header>
     <nav  class="nav_filtros">
         <div class="filtros">
@@ -74,21 +73,23 @@
                 </li>
             </ul>
         </div>
+
         <button type="button" id="mostrar_carrito" class="carrito_boton" >cacccccccrrito</button>  
+
     </nav>
     <main>
         <div id="contenedor_carrito" class="ocultar"></div>
 
         <div class="contendor_buscar">
             <input id="input_buscar" type="text" placeholder="Busca aquí tu helado favorito">
+            <button class="ocultar" type="button" id="limpiar_busqueda"><img src="./img/close.png" alt="cerrar"></button>
+
             <button type="button" id="boton_buscar"> Buscar</button>
-            <button type="button" id="limpiar_busqueda">limpiar busqueda</button>
         </div>
-
-         
-
-        <section class="productos" id="contenedor_principal" ></section>
         
+        <section class="productos" id="contenedor_principal" ></section>
+        <img class="luna" src="./img/luna.png" alt="">
+
     </main>
     
     <footer>

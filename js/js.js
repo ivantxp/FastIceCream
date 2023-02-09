@@ -30,10 +30,23 @@ function programa(helados){
     let contenedor_principal = document.getElementById("contenedor_principal");
 
     let input_buscar_html = document.getElementById("input_buscar");
-    input_buscar_html.onchange = realizar_busqueda;
+    //input_buscar_html.onchange = realizar_busqueda;
+    //input_buscar_html.onmouseover = visualisacion_limpiar
+    //input_buscar_html.onmouseout = visualisacion_limpiar
+    input_buscar_html.oninput  = visualisacion_limpiar
+    function visualisacion_limpiar(){
+        if(input_buscar_html.value!="") {
+            if(limpiar_busqueda.className.includes("ocultar")){
+                limpiar_busqueda.classList.toggle("ocultar") 
+            }     
+        }else{
+            limpiar_busqueda.classList.toggle("ocultar") 
+        }
+    }
 
+  
     let contenedor_carrito_js =document.getElementById("contenedor_carrito");
-    boton_buscar_js.onclick = realizar_busqueda;
+    boton_buscar_js.in = realizar_busqueda;
 
     let mostrar_carrito =document.getElementById("mostrar_carrito");
     mostrar_carrito.onclick =  visualisacion_carrito;
@@ -160,6 +173,8 @@ function programa(helados){
             }else{
                 filtrado_check();
             } */
+            limpiar_busqueda.classList.toggle("ocultar") 
+
     }
 
     function realizar_busqueda(){
