@@ -43,18 +43,9 @@ function programa(helados){
         }
     }
 
-  
     let contenedor_carrito_js =document.getElementById("contenedor_carrito");
     contenedor_carrito_js.onclick = click_fuera
-   
-    function click_fuera(e){
-        if(e.target.id != "sub_contenedor"){
-                    //alert(e.target.id)
 
-            visualisacion_carrito()
-        }
-    }
-  
 
     let boton_buscar_js = document.getElementById("boton_buscar");
     boton_buscar_js.onclick = realizar_busqueda;
@@ -146,7 +137,7 @@ function programa(helados){
     }
 
     mostrar_producto(helados);
-
+/* 
     function disableScroll(){  
         let x = window.scrollX;
         let  y = window.scrollY;
@@ -155,7 +146,7 @@ function programa(helados){
     
     function enableScroll(){  
         window.onscroll = null;
-    }
+    } */
   
     function limpiesa_input(){
         busqueda = "";
@@ -188,15 +179,12 @@ function programa(helados){
  
     function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
         contenedor_carrito_js.classList.toggle("mostrar");
-        if(contenedor_carrito_js.className.includes("mostrar")==false){
-            disableScroll();
-        }else{
+        if(contenedor_carrito_js.className.includes("mostrar")){
             if(carrito.length != 0){
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
                 }else{
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `;
                 }  
-                enableScroll();
         }
     };
 
@@ -208,9 +196,12 @@ function programa(helados){
         carrito.forEach(({id,sabor,cantidad,precio},el)=> contenedor_carrito_js.innerHTML +=`
                 <div class="articulo_carrito">
                     <p> ${el+1})${sabor} </p>
-                    <button  class ="class_boton_restar" id=restar${id}>- </button>   
-                    <span> ${cantidad} </span>
-                    <button  class ="class_boton_agregar" id=sumar${id}> + </button>   
+                    <div>
+                        <button  class ="class_boton_restar" id=restar${id}>- </button>   
+                        <span> ${cantidad} </span>
+                        <button  class ="class_boton_agregar" id=sumar${id}> + </button> 
+                    </div>
+                      
                     <button class="botones_quitar"  id=quitar${id}>quitar</button>
                     <span> ${cantidad * precio} </span>
                 </div>
@@ -241,9 +232,6 @@ function programa(helados){
             botones_eliminar_articulos.forEach((el)=>el.onclick =elminar_articulo);
             finalizado_compra.onclick = envio_info;
 
-
-
-
             localStorage.setItem("producto_usuario",JSON.stringify(carrito));
             
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
@@ -258,9 +246,16 @@ function programa(helados){
             let cerrar_carrito = document.getElementById("cerrar_carrito");
             cerrar_carrito.onclick = visualisacion_carrito;
 
-
         }   
     };
+
+    function click_fuera(e){
+        if(e.target.id == "contenedor_carrito"){
+                    //alert(e.target.id)
+
+            visualisacion_carrito()
+        }
+    }
 
     function filtrado_precios_altos(){
         if(check_precios_altos.checked){

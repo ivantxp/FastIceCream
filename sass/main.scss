@@ -123,7 +123,6 @@ body{
             
             #sub_contenedor{
                 margin: 110px  220px;
-
                 width: 350px;
                 min-height: 90%;
                 background-color: aqua;
@@ -135,7 +134,34 @@ body{
                 .articulo_carrito{
                     display: flex;
                     margin: 5px;
+                    div{
+                        display: flex;
+                        border: solid .1px red;
+                        justify-content: space-around;
+                        background-color: #00aa14;
+                        border-radius: 10px;
+                        width: 50px;
+                        
+                        button{
+                            border: none;
+                            background-color: transparent;
+                            
+                        };
+                    }
                 }
+                p{
+                    color:red
+                }
+                .class_boton_restar{
+                    color:blue
+                }
+                span{
+                    color:green
+                }
+                .class_boton_agregar{
+                    color:goldenrod
+                }
+
             }
         } 
     }

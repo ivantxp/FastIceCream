@@ -130,6 +130,30 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito {
   display: flex;
   margin: 5px;
 }
+body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito div {
+  display: flex;
+  border: solid 0.1px red;
+  justify-content: space-around;
+  background-color: #00aa14;
+  border-radius: 10px;
+  width: 50px;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito div button {
+  border: none;
+  background-color: transparent;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor p {
+  color: red;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .class_boton_restar {
+  color: blue;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor span {
+  color: green;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .class_boton_agregar {
+  color: goldenrod;
+}
 body main {
   justify-self: stretch;
   display: flex;
