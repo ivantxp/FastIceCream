@@ -26,7 +26,6 @@ function programa(helados){
     //let busqueda_con_check  ="";
     let busqueda = "";
     //let cuerpo = document.getElementById("main_html");
-    let boton_buscar_js = document.getElementById("boton_buscar");
     let contenedor_principal = document.getElementById("contenedor_principal");
 
     let input_buscar_html = document.getElementById("input_buscar");
@@ -36,22 +35,34 @@ function programa(helados){
     input_buscar_html.oninput  = visualisacion_limpiar
     function visualisacion_limpiar(){
         if(input_buscar_html.value!="") {
-            if(limpiar_busqueda.className.includes("ocultar")){
-                limpiar_busqueda.classList.toggle("ocultar") 
+            if(limpiar_busqueda.className.includes("ocultar_x")){
+                limpiar_busqueda.classList.toggle("ocultar_x") 
             }     
         }else{
-            limpiar_busqueda.classList.toggle("ocultar") 
+            limpiar_busqueda.classList.toggle("ocultar_x") 
         }
     }
 
   
     let contenedor_carrito_js =document.getElementById("contenedor_carrito");
-    boton_buscar_js.in = realizar_busqueda;
+    contenedor_carrito_js.onclick = click_fuera
+   
+    function click_fuera(e){
+        if(e.target.id != "sub_contenedor"){
+                    //alert(e.target.id)
+
+            visualisacion_carrito()
+        }
+    }
+  
+
+    let boton_buscar_js = document.getElementById("boton_buscar");
+    boton_buscar_js.onclick = realizar_busqueda;
 
     let mostrar_carrito =document.getElementById("mostrar_carrito");
     mostrar_carrito.onclick =  visualisacion_carrito;
 
-    let cerrar_carrito = ""
+    
 
     let limpiar_busqueda = document.getElementById("limpiar_busqueda");
     limpiar_busqueda.onclick = limpiesa_input;
@@ -111,7 +122,7 @@ function programa(helados){
                             <button class="boton_agregar" id=elimnar${id}> agregar</button>
                         </div>
                     </div>
-                `
+                `;
             contenedor_principal.appendChild(contenedor_producto);  
         });
 
@@ -134,7 +145,7 @@ function programa(helados){
         } 
     }
 
-    mostrar_producto(helados)
+    mostrar_producto(helados);
 
     function disableScroll(){  
         let x = window.scrollX;
@@ -155,13 +166,13 @@ function programa(helados){
             }else{
                 filtrado_check();
             } */
-            limpiar_busqueda.classList.toggle("ocultar") 
+            limpiar_busqueda.classList.toggle("ocultar_x")
 
     }
 
     function realizar_busqueda(){
         filtrados = "";
-        busqueda = input_buscar_html.value.toLowerCase()
+        busqueda = input_buscar_html.value.toLowerCase();
         filtrados = helados.filter(({categoria,sabor,descripcion})=>
             categoria.toLowerCase().includes(busqueda)
             || sabor.toLowerCase().includes(busqueda)
@@ -174,26 +185,24 @@ function programa(helados){
             };  */
     }
     
+ 
     function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
-        
-        contenedor_principal.classList.toggle("ocultar");
-        contenedor_carrito_js.classList.toggle("ocultar");
-        if(contenedor_carrito_js.className.includes("ocultar")==false){
-            disableScroll()
+        contenedor_carrito_js.classList.toggle("mostrar");
+        if(contenedor_carrito_js.className.includes("mostrar")==false){
+            disableScroll();
         }else{
             if(carrito.length != 0){
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
                 }else{
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `;
                 }  
-                enableScroll()
+                enableScroll();
         }
-        
     };
 
     function renderisado_carrito(){
-        sub_total = []
-        contenedor_carrito_js.innerHTML = ""
+        sub_total = [];
+        contenedor_carrito_js.innerHTML = "";
         carrito.forEach(({cantidad,precio})=>sub_total.push(cantidad*precio));
         total = sub_total.reduce((a,el)=> a + el,0);
         carrito.forEach(({id,sabor,cantidad,precio},el)=> contenedor_carrito_js.innerHTML +=`
@@ -218,33 +227,38 @@ function programa(helados){
                         </div>
                     </div>
                 `;
-     
-            let botones_sumar = document.querySelectorAll(`.class_boton_agregar`);   
+            
+            let cerrar_carrito = document.getElementById("cerrar_carrito")
+            let botones_sumar = document.querySelectorAll(`.class_boton_agregar`); 
             let botones_restar = document.querySelectorAll(`.class_boton_restar`);    
             let botones_eliminar_articulos = document.querySelectorAll(`.botones_quitar`);
-
-            let sub_conenedor = document.getElementById("cerrar_carrito")
-
-            sub_conenedor.onclick = visualisacion_carrito
-            botones_eliminar_articulos.forEach((el)=>el.onclick =elminar_articulo);
-            botones_restar.forEach((el)=>el.onclick = restar_cantidad);
-            botones_sumar.forEach((el)=>el.onclick = sumar_cantidad);
-            localStorage.setItem("producto_usuario",JSON.stringify(carrito));
-
             let finalizado_compra = document.getElementById("finalizar_compra");
-            finalizado_compra.onclick = envio_info
+            //let sub_contenedor = document.getElementById("sub_contenedor")
+
+            cerrar_carrito.onclick = visualisacion_carrito;
+            botones_sumar.forEach((el)=>el.onclick = sumar_cantidad);
+            botones_restar.forEach((el)=>el.onclick = restar_cantidad);
+            botones_eliminar_articulos.forEach((el)=>el.onclick =elminar_articulo);
+            finalizado_compra.onclick = envio_info;
+
+
+
+
+            localStorage.setItem("producto_usuario",JSON.stringify(carrito));
             
-            if(contenedor_carrito_js.className.includes("ocultar")){
-                mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
-            }else{
-                mostrar_carrito.innerHTML =`<img class="carrito"src="./img/cerrar.png" alt="">`
-            }   
+            mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
         }else{
             contenedor_carrito_js.innerHTML =`
-                        <div>
+                        <div id="sub_contenedor"> 
+                            <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
                             <span>No tiene articulos en su carrito </span>
                         </div>
                     `;
+            mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
+            let cerrar_carrito = document.getElementById("cerrar_carrito");
+            cerrar_carrito.onclick = visualisacion_carrito;
+
+
         }   
     };
 

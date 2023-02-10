@@ -3,8 +3,18 @@
   margin: 0;
 }
 
-.ocultar {
+.ocultar_x {
   display: none;
+}
+
+.ocultar {
+  transition: transform 300ms ease-out;
+  transform: translate(-100vw, 0px);
+}
+
+.mostrar {
+  transition: transform 300ms ease-out;
+  transform: translate(0, 0px);
 }
 
 body {
@@ -41,11 +51,17 @@ body .nav_filtros {
   flex-direction: column;
   position: sticky;
   height: 100vh;
+  width: 100%;
+  border-radius: 10px;
   top: 0;
   color: white;
+  z-index: 100;
 }
 body .nav_filtros .filtros {
   padding: 90px 0 0 0;
+}
+body .nav_filtros .filtros, body .nav_filtros .precios {
+  margin: 0 0 0 15px;
 }
 body .nav_filtros .filtros h3, body .nav_filtros .precios h3 {
   margin: 15px 0 5px;
@@ -92,6 +108,28 @@ body .nav_filtros #mostrar_carrito .cantidad_carrito {
 body .nav_filtros #mostrar_carrito:hover {
   transform: translate(0, -2px);
 }
+body .nav_filtros #contenedor_carrito {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4039215686);
+  color: black;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor {
+  margin: 110px 220px;
+  width: 350px;
+  min-height: 90%;
+  background-color: aqua;
+  padding: 20px;
+  border-radius: 0 5px 5px 0;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor #cerrar_carrito {
+  width: 20px;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito {
+  display: flex;
+  margin: 5px;
+}
 body main {
   justify-self: stretch;
   display: flex;
@@ -106,6 +144,7 @@ body main .contendor_buscar {
   position: sticky;
   top: 108px;
   width: 100%;
+  z-index: 0;
   background-color: rgb(255, 255, 231);
   display: flex;
   justify-content: center;
@@ -146,26 +185,6 @@ body main .contendor_buscar #boton_buscar:active {
   background-blend-mode: normal;
   transform: translate(0, 0);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
-}
-body main #contenedor_carrito {
-  position: absolute;
-  height: 100vw;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.4039215686);
-  z-index: 50;
-}
-body main #contenedor_carrito #sub_contenedor {
-  width: 350px;
-  margin: 0 auto;
-  background-color: aqua;
-  padding: 20px;
-}
-body main #contenedor_carrito #sub_contenedor #cerrar_carrito {
-  width: 50px;
-}
-body main #contenedor_carrito #sub_contenedor .articulo_carrito {
-  display: flex;
-  margin: 5px;
 }
 body main #contenedor_principal {
   display: flex;
