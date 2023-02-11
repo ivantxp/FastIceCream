@@ -194,30 +194,35 @@ function programa(helados){
         carrito.forEach(({cantidad,precio})=>sub_total.push(cantidad*precio));
         total = sub_total.reduce((a,el)=> a + el,0);
         carrito.forEach(({id,sabor,cantidad,img,precio})=> contenedor_carrito_js.innerHTML +=`
-                <div class="articulo_carrito">
-                    <img src=${img}>
-                    <p> ${sabor} </p>
-                    <div>
-                        <button  class ="class_boton_restar" id=restar${id}>- </button>   
-                        <span> ${cantidad} </span>
-                        <button  class ="class_boton_agregar" id=sumar${id}> + </button> 
+                <article class="articulo_carrito">
+                    <img class="img_carrito" src=${img}>
+                    <div class="info_articulo">
+                        <p> ${sabor} </p>
+                        <div class="accion_carrito">
+                            <div >
+                                <button  class ="class_boton_restar" id=restar${id}>- </button>   
+                                <span> ${cantidad} </span>
+                                <button  class ="class_boton_agregar" id=sumar${id}> + </button> 
+                            </div>
+                            <button class="botones_quitar" id=quitar${id}>
+                                <img src="./img/elminar.png" alt="eliminar">
+                            </button>
+                        </div>
                     </div>
-                      
-                    <button class="botones_quitar"  id=quitar${id}>quitar</button>
-                    <span> ${cantidad * precio} </span>
-                </div>
+                    <p class="sub_total">$${cantidad * precio} </p>
+                </article>
             `
         );
         if(carrito!=""){
             contenedor_carrito_js.innerHTML =`
-                    <div id="sub_contenedor"> 
+                    <section id="sub_contenedor"> 
                         <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
                         ${contenedor_carrito_js.innerHTML}
                         <div>
-                            <span> Total:${total} </span>
                             <button  id=finalizar_compra>Finalizar comprar</button>
+                            <span> Total:${total} </span>
                         </div>
-                    </div>
+                    </section>
                 `;
             
             let cerrar_carrito = document.getElementById("cerrar_carrito")

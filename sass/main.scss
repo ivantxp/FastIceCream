@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    //border: solid .1px red;
+    border:dashed red .1px
 }   
 .ocultar_x{
     display: none;
@@ -120,51 +120,73 @@ body{
             width: 100vw;
             background-color: #000000b1;
             color: black;
-            
+            overflow: scroll;
+
             #sub_contenedor{
-                margin: 110px  220px;
-                width: 350px;
+                display: flex;
+                flex-direction: column;
+                margin: 20px ;
+                width: 90%;
                 min-height: 90%;
                 background-color: aqua;
-                padding: 20px;
+                padding: 10px;
                 border-radius: 0 5px 5px 0;
                 #cerrar_carrito{
                     width: 20px;
                 }
                 .articulo_carrito{
                     display: flex;
-                    margin: 5px;
-                    img{
-                        width: 50px;
-                    }
-                    div{
-                        display: flex;
-                        border: solid .1px red;
-                        justify-content: space-around;
-                        background-color: #00aa14;
-                        border-radius: 10px;
-                        width: 50px;
-                        
-                        button{
-                            border: none;
-                            background-color: transparent;
-                            
-                        };
-                    }
-                }
-                p{
-                    color:red
-                }
-                .class_boton_restar{
-                    color:blue
-                }
-                span{
-                    color:green
-                }
-                .class_boton_agregar{
-                    color:goldenrod
-                }
+                    justify-content: center;
+                    width: 35 0px;
+                    background-color: #e1e1e1;
+                    margin: 5px 0;
+                    border-radius: 10px ;
 
+                    .img_carrito{
+                        width: 80px;
+                        height: 70px;
+                        border-radius: 10px 0 0 10px;
+
+                    }
+                    .info_articulo{
+                        margin:0  0 0 5px;
+                        width: 100%;
+                        .accion_carrito{
+                            display: flex;
+                            margin:5px;
+                            div{
+                                display: flex;
+                                text-align: center;
+                                margin: auto 0;
+                                height: 20px;
+                                justify-content: space-around;
+                                background-color: #00aa14;
+                                border-radius: 10px; 
+                                span, .class_boton_restar, .class_boton_agregar{
+                                    font-size: 18px;
+                                    width: 20px;
+                                    font-family: 'Itim', cursive;
+                                    padding: auto;
+                                }       
+                            }
+                            .botones_quitar{
+                                margin: 0 0 0 5px  ;
+                                img{
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                            button{
+                               
+                                border: none;
+                                background-color: transparent;  
+                            };
+                        }
+                    }
+                    .sub_total{
+                        width: 50px;
+                    }
+                }
             }
         } 
     }
