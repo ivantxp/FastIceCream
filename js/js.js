@@ -193,9 +193,10 @@ function programa(helados){
         contenedor_carrito_js.innerHTML = "";
         carrito.forEach(({cantidad,precio})=>sub_total.push(cantidad*precio));
         total = sub_total.reduce((a,el)=> a + el,0);
-        carrito.forEach(({id,sabor,cantidad,precio},el)=> contenedor_carrito_js.innerHTML +=`
+        carrito.forEach(({id,sabor,cantidad,img,precio})=> contenedor_carrito_js.innerHTML +=`
                 <div class="articulo_carrito">
-                    <p> ${el+1})${sabor} </p>
+                    <img src=${img}>
+                    <p> ${sabor} </p>
                     <div>
                         <button  class ="class_boton_restar" id=restar${id}>- </button>   
                         <span> ${cantidad} </span>

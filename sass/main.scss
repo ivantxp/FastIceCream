@@ -118,7 +118,7 @@ body{
             position:absolute;
             height:100vh;
             width: 100vw;
-            background-color: #00000067;
+            background-color: #000000b1;
             color: black;
             
             #sub_contenedor{
@@ -134,6 +134,9 @@ body{
                 .articulo_carrito{
                     display: flex;
                     margin: 5px;
+                    img{
+                        width: 50px;
+                    }
                     div{
                         display: flex;
                         border: solid .1px red;

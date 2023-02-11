@@ -112,7 +112,7 @@ body .nav_filtros #contenedor_carrito {
   position: absolute;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.4039215686);
+  background-color: rgba(0, 0, 0, 0.6941176471);
   color: black;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor {
@@ -129,6 +129,9 @@ body .nav_filtros #contenedor_carrito #sub_contenedor #cerrar_carrito {
 body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito {
   display: flex;
   margin: 5px;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito img {
+  width: 50px;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito div {
   display: flex;
