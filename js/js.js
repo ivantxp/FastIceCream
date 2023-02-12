@@ -186,6 +186,15 @@ function programa(helados){
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `;
                 }  
         }
+        if(contenedor_carrito_js.innerText ==""){
+            contenedor_carrito_js.innerHTML =`
+                <section id="sub_contenedor"> 
+                    <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
+                    <img class="img_sin_articulo" src="./img/agregado.png" alt="sin artuculos">
+                    <p class="text_sin_articulo">No tiene articulos en su carrito </p>
+                </section>
+            `   
+        }
     };
 
     function renderisado_carrito(){
@@ -197,15 +206,15 @@ function programa(helados){
                 <article class="articulo_carrito">
                     <img class="img_carrito" src=${img}>
                     <div class="info_articulo">
-                        <p> ${sabor} </p>
+                        <p class="sabor_carrito"> ${sabor} </p>
                         <div class="accion_carrito">
                             <div >
                                 <button  class ="class_boton_restar" id=restar${id}>- </button>   
                                 <span> ${cantidad} </span>
                                 <button  class ="class_boton_agregar" id=sumar${id}> + </button> 
                             </div>
-                            <button class="botones_quitar" id=quitar${id}>
-                                <img src="./img/elminar.png" alt="eliminar">
+                            <button class="botones_quitar" >
+                                <img id=quitar${id}  src="./img/elminar.png" alt="eliminar">
                             </button>
                         </div>
                     </div>
@@ -216,12 +225,20 @@ function programa(helados){
         if(carrito!=""){
             contenedor_carrito_js.innerHTML =`
                     <section id="sub_contenedor"> 
+                        
                         <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
-                        ${contenedor_carrito_js.innerHTML}
-                        <div>
-                            <button  id=finalizar_compra>Finalizar comprar</button>
-                            <span> Total:${total} </span>
+                        <h2>
+                            Mis Articulos
+                        </h2>
+                        <div class="contendor_articulos">
+                            ${contenedor_carrito_js.innerHTML}
+
                         </div>
+                        <div class="total_compra">
+                                <button  id=finalizar_compra>Finalizar comprar</button>
+                                <span> Total</span>
+                                <span>$${total} </span>
+                            </div>
                     </section>
                 `;
             
@@ -243,11 +260,12 @@ function programa(helados){
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
         }else{
             contenedor_carrito_js.innerHTML =`
-                        <div id="sub_contenedor"> 
-                            <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
-                            <span>No tiene articulos en su carrito </span>
-                        </div>
-                    `;
+                    <section id="sub_contenedor"> 
+                        <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
+                        <img class="img_sin_articulo" src="./img/agregado.png" alt="sin artuculos">
+                        <p class="text_sin_articulo">No tiene articulos en su carrito </p>
+                    </section>
+                ` 
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
             let cerrar_carrito = document.getElementById("cerrar_carrito");
             cerrar_carrito.onclick = visualisacion_carrito;
@@ -326,8 +344,6 @@ function programa(helados){
     };
 
     function extractor_numero(cadena){//function para extrar el numeros de las clase creadas con js para comparar con los id de array helados
-
-        
         let id_obtenido ="";
         for(i=0; i<cadena.length; i++){
             if(isNaN(cadena[i]) == false){
@@ -388,6 +404,7 @@ function programa(helados){
     }
 
     function elminar_articulo(e){
+        console.log(e.target.id)
         contenedor_carrito_js.innerText ="";
         let id_extraido = Number(extractor_numero(e.target.id));
         let a_eliminar = carrito.indexOf(carrito.find(({id})=>id_extraido== id));
@@ -400,6 +417,8 @@ function programa(helados){
     }
 
     function restar_cantidad(e){
+        console.log(e.target.id)
+
         contenedor_carrito_js.innerText ="";
         let id_extraido = Number(extractor_numero(e.target.id));
         if(carrito.find(({id})=> id == id_extraido )){
@@ -510,10 +529,14 @@ function programa(helados){
             carrito = []
             visualisacion_carrito()
             contenedor_carrito_js.innerHTML =`
-                    <div >
-                        <span>No tiene articulos en su carrito </span>
-                    </div>
-                `
+                    <section id="sub_contenedor"> 
+                        <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
+                        <img class="img_sin_articulo" src="./img/agregado.png" alt="sin artuculos">
+                        <p class="text_sin_articulo">No tiene articulos en su carrito </p>
+                    </section>
+                ` 
+                mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
+
         /*    let boton_aceptar = document.getElementById("boton_aceptar");
             boton_aceptar.onclick = cerra_ventana; */
         }

@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  border: dashed red 0.1px;
 }
 
 .ocultar_x {
@@ -118,67 +117,127 @@ body .nav_filtros #contenedor_carrito {
   overflow: scroll;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor {
+  background-color: rgb(247, 247, 247);
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  width: 90%;
+  justify-content: ceter;
+  margin: 30px;
   min-height: 90%;
-  background-color: aqua;
   padding: 10px;
-  border-radius: 0 5px 5px 0;
+  border-radius: 10px;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor #cerrar_carrito {
   width: 20px;
+  height: 20px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito {
+body .nav_filtros #contenedor_carrito #sub_contenedor .img_sin_articulo {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .text_sin_articulo {
+  font-size: 50px;
+  font-family: "Itim", cursive;
+  align-self: center;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor h2 {
+  margin: 0 auto;
+  width: 300px;
+  border-radius: 0 5px 5px 0;
+  color: rgb(144, 54, 117);
+  font-family: "Knewave", cursive;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  font-size: 50px;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-radius: 10px;
   display: flex;
-  justify-content: center;
-  width: 35 0px;
-  background-color: #e1e1e1;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 80%;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito {
+  display: flex;
+  background-color: #ffffff;
   margin: 5px 0;
   border-radius: 10px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .img_carrito {
-  width: 80px;
-  height: 70px;
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .img_carrito {
+  width: 90px;
+  height: 90px;
   border-radius: 10px 0 0 10px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo {
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo {
   margin: 0 0 0 5px;
-  width: 100%;
+  width: 170px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo .accion_carrito {
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .sabor_carrito {
+  font-family: "Rock Salt", cursive;
+  font-stretch: ultra-condensed;
+  font-size: 16px;
+  line-height: 25px;
+  border-bottom: solid black 1px;
+  color: rgb(0, 0, 0);
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito {
   display: flex;
   margin: 5px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo .accion_carrito div {
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div {
   display: flex;
+  align-items: center;
   text-align: center;
-  margin: auto 0;
-  height: 20px;
-  justify-content: space-around;
-  background-color: #00aa14;
+  padding: auto 0;
+  background-color: #bf26a3;
   border-radius: 10px;
-}
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo .accion_carrito div span, body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo .accion_carrito div .class_boton_restar, body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo .accion_carrito div .class_boton_agregar {
-  font-size: 18px;
-  width: 20px;
+  height: 22px;
   font-family: "Itim", cursive;
-  padding: auto;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo .accion_carrito .botones_quitar {
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div span, body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_restar, body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_agregar {
+  font-size: 20px;
+  width: 25px;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div span:hover, body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_restar:hover, body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_agregar:hover {
+  cursor: pointer;
+  color: aquamarine;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar {
   margin: 0 0 0 5px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo .accion_carrito .botones_quitar img {
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar img {
   width: 20px;
   height: 20px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .info_articulo .accion_carrito button {
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito button {
   border: none;
   background-color: transparent;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .articulo_carrito .sub_total {
-  width: 50px;
+body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .sub_total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  border-radius: 0 5px 5px 0;
+  color: rgb(144, 54, 117);
+  font-family: "Knewave", cursive;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  font-size: 30px;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra span {
+  color: rgb(144, 54, 117);
+  font-family: "Knewave", cursive;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  font-size: 30px;
+  width: 100px;
 }
 body main {
   justify-self: stretch;
