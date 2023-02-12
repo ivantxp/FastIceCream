@@ -17,6 +17,21 @@
   transform: translate(0, 0px);
 }
 
+.quitar_scroll {
+  overflow-y: hidden;
+}
+
+.titulo_alerta, .sub_titulo_alerta {
+  color: rgb(144, 54, 117);
+  font-family: "Itim", cursive;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.sub_titulo_alerta {
+  font-size: 20px;
+}
+
 body {
   overflow-x: hidden;
   display: grid;
@@ -111,12 +126,12 @@ body .nav_filtros #mostrar_carrito:hover {
 body .nav_filtros #contenedor_carrito {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
   position: absolute;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.6941176471);
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6117647059);
   color: black;
   overflow: scroll;
 }
@@ -126,10 +141,9 @@ body .nav_filtros #contenedor_carrito #sub_contenedor {
   flex-direction: column;
   justify-content: flex-start;
   margin: 30px 50px;
-  min-height: 400px;
-  width: 500px;
+  width: 600px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor #cerrar_carrito {
   width: 20px;
@@ -143,7 +157,8 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .img_sin_articulo {
 body .nav_filtros #contenedor_carrito #sub_contenedor .text_sin_articulo {
   font-size: 50px;
   font-family: "Itim", cursive;
-  align-self: center;
+  text-align: center;
+  margin: 20px;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor h2 {
   margin: 0 auto;
@@ -155,14 +170,17 @@ body .nav_filtros #contenedor_carrito #sub_contenedor h2 {
   font-size: 50px;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos {
+  display: flex;
+  justify-content: center;
   border-top: 2px solid;
   border-bottom: 2px solid;
   border-radius: 10px;
-  width: 400px;
+  width: 500px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 30px 0;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito {
@@ -239,12 +257,14 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra {
   display: flex;
   justify-content: center;
   padding: 20px;
+  width: 500px;
+  border-radius: 5px;
 }
 body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra #finalizar_compra {
   border: transparent;
   margin: 0 50px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   background: linear-gradient(0deg, rgb(86, 196, 67) 0%, rgb(213, 250, 221) 48%, rgb(32, 178, 7) 98%);
   background-blend-mode: normal;
   transition: transform 50ms ease-out;

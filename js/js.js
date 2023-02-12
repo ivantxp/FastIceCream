@@ -22,26 +22,11 @@ function programa(helados){
     let total ;
     let filtrados ="";
     let filtro_check=[];
-    //let filtro_check_precios=[];
-    //let busqueda_con_check  ="";
     let busqueda = "";
-    //let cuerpo = document.getElementById("main_html");
     let contenedor_principal = document.getElementById("contenedor_principal");
 
     let input_buscar_html = document.getElementById("input_buscar");
-    //input_buscar_html.onchange = realizar_busqueda;
-    //input_buscar_html.onmouseover = visualisacion_limpiar
-    //input_buscar_html.onmouseout = visualisacion_limpiar
     input_buscar_html.oninput  = visualisacion_limpiar
-    function visualisacion_limpiar(){
-        if(input_buscar_html.value!="") {
-            if(limpiar_busqueda.className.includes("ocultar_x")){
-                limpiar_busqueda.classList.toggle("ocultar_x") 
-            }     
-        }else{
-            limpiar_busqueda.classList.toggle("ocultar_x") 
-        }
-    }
 
     let contenedor_carrito_js =document.getElementById("contenedor_carrito");
     contenedor_carrito_js.onclick = click_fuera
@@ -52,8 +37,6 @@ function programa(helados){
 
     let mostrar_carrito =document.getElementById("mostrar_carrito");
     mostrar_carrito.onclick =  visualisacion_carrito;
-
-    
 
     let limpiar_busqueda = document.getElementById("limpiar_busqueda");
     limpiar_busqueda.onclick = limpiesa_input;
@@ -137,7 +120,7 @@ function programa(helados){
     }
 
     mostrar_producto(helados);
-/* 
+
     function disableScroll(){  
         let x = window.scrollX;
         let  y = window.scrollY;
@@ -146,8 +129,8 @@ function programa(helados){
     
     function enableScroll(){  
         window.onscroll = null;
-    } */
-  
+    } 
+    
     function limpiesa_input(){
         busqueda = "";
         input_buscar_html.value = "";
@@ -158,7 +141,16 @@ function programa(helados){
                 filtrado_check();
             } */
             limpiar_busqueda.classList.toggle("ocultar_x")
+    }
 
+    function visualisacion_limpiar(){
+        if(input_buscar_html.value!="") {
+            if(limpiar_busqueda.className.includes("ocultar_x")){
+                limpiar_busqueda.classList.toggle("ocultar_x") 
+            }     
+        }else{
+            limpiar_busqueda.classList.toggle("ocultar_x") 
+        }
     }
 
     function realizar_busqueda(){
@@ -178,7 +170,10 @@ function programa(helados){
     
  
     function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
+        let quitar_scroll = document.body
+        quitar_scroll.classList.toggle("quitar_scroll")
         contenedor_carrito_js.classList.toggle("mostrar");
+        
         if(contenedor_carrito_js.className.includes("mostrar")){
             if(carrito.length != 0){
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
@@ -196,7 +191,7 @@ function programa(helados){
             `   
         }
     };
-
+    
     function renderisado_carrito(){
         sub_total = [];
         contenedor_carrito_js.innerHTML = "";
@@ -377,30 +372,25 @@ function programa(helados){
             carrito[carrito.length-1].cantidad = 1;
         }
         renderisado_carrito();
-
-
-
-/*         if(contenedor_carrito_js.className.includes("ocultar")){
-            mostrar_carrito.innerHTML=`carrito${carrito.length}`;
-        }else{
-            mostrar_carrito.innerText ="ocultar"
-        } */
-        
-    
+        function texto_toastify(){
+            
+            return 
+        }       
         Toastify({
-            text: "agrego al carrito",
-            duration: 3000,
-            destination: "https://github.com/apvarun/toastify-js",
+            text: `Se a agregado un helado sabor ${helados[id_extraido].sabor}`,
+            duration: 1000,
+            //destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
             close: true,
             gravity: "bottom", // `top` or `bottom`
             position: "right", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                background: "linear-gradient(to right, #ff006a, #eb60df)",
             },
             onClick: function(){} // Callback after click
         }).showToast();
+
     }
 
     function elminar_articulo(e){
@@ -444,17 +434,12 @@ function programa(helados){
     function envio_info(){
         let ventana_envio = document.createElement("div")
         ventana_envio.className ="ventana_finalizado_comprar"
-    /*     let text_swal =""
-        carrito.forEach(({id,sabor,cantidad,precio})=>{ text_swal +=`\n ${id} sabor:${sabor}${cantidad}  ${cantidad * precio} \n `}) 
-        text_swal +=  `\nTotal:${total}  `  */
         let html_insert="" 
-        carrito.forEach(({id,sabor,cantidad,precio},el)=> html_insert +=`
-                            <p> ${el+1}) ${sabor} ${cantidad} SubTtotal ${cantidad * precio} </p>
-                    `) + `<div></div><p> Totol: ${total}</p>>`
+
+        visualisacion_carrito()
+
         Swal.fire({
-            title: 'Quiere confirmar su compra?',
-            text: "You won't be able to revert this!",
-            html: html_insert,
+            title: '<h3 class="titulo_alerta">Quiere confirmar su compra</h3>',
             icon: 'pregunta',
             showconfirmbutton:true,
             showCancelButton: true,
@@ -462,102 +447,31 @@ function programa(helados){
             cancelButtonColor: '#d33',
             confirmButtonText: 'Si quiero',
             cancelmButtonText: 'Volver al carrito',
-            background: '#000000',
+            background: '#000000 url("../img/fondo2.jpg")',
 
             }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                    title: 'Agradecemos su compra!!!',
-                    text: 'Su pedido esta en camino',
+                    title: '<h3 class="titulo_alerta">Agradecemos su compra!!!</h3>',
+                    html: '<h4 class="sub_titulo_alerta">En breve nos contactaremos con usted</h4>',
                     //imageUrl: './img/enviado.png',
                     imageUrl:'./img/logo.png',
                     imageWidth: 400,
                     imageHeight: 400,
                     imageAlt: 'Custom image',
                     confirmButtonColor: '#00aa14',
-                    background: '#000000',
+                    background: '#000000 url("../img/fondo2.jpg")',
                 })
                 realizar_comprar()
-            /*     Swal.fire(
-                    'agradesemos su compra',
-                    'su producto llegara',
-                    'success',
-                    realizar_comprar()
-                ) */
                 }
             })
 
-    /* 
-        carrito.forEach(({id,sabor,cantidad,precio})=> ventana_envio.innerHTML +=`
-                <div >
-                    <p> ${id} sabor:${sabor} </p>
-                    <span> ${cantidad} </span>
-                    <span> ${cantidad * precio} </span>
-                </div>
-            `
-        );
-        ventana_envio.innerHTML =`
-            <div id=envio_productos>
-                ${ventana_envio.innerHTML}
-                <div>
-                    <span> Total:${total} </span>
-                    <button  id=boton_volver>volver a la tienda</button>
-                    <button  id=boton_confirmar>confirmar compra</button>
-                </div>
-            </div>
-        `; 
-        cuerpo.appendChild(ventana_envio) */
-
-    /*     let boton_confirmar = document.getElementById("boton_confirmar") 
-        boton_confirmar.onclick = realizar_comprar
-
-        let boton_volver = document.getElementById("boton_volver")
-        boton_volver.onclick = volver_tienda
-        */
         function realizar_comprar(){
-    /*         ventana_envio.innerHTML=`
-            <div id=envio_productos>
-                <p>
-                        Agradesemos su compra
-                    </p>
-                    <button  id=boton_aceptar>aceptar</button>
-                </div>   
-            `  */
-            
+
             localStorage.clear();
             contenedor_carrito_js.innerText ="";
             carrito = []
-            visualisacion_carrito()
-            contenedor_carrito_js.innerHTML =`
-                    <section id="sub_contenedor"> 
-                        <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
-                        <img class="img_sin_articulo" src="./img/agregado.png" alt="sin artuculos">
-                        <p class="text_sin_articulo">No tiene articulos en su carrito </p>
-                    </section>
-                ` 
-                mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
-
-        /*    let boton_aceptar = document.getElementById("boton_aceptar");
-            boton_aceptar.onclick = cerra_ventana; */
+            mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
         }
-
-    /*     function volver_tienda(){
-            ventana_envio.innerHTML = ""
-            ventana_envio.classList.remove("ventana_finalizado_comprar")
-        }
-        
-        function cerra_ventana(){
-            ventana_envio.innerHTML = ""
-            ventana_envio.classList.remove("ventana_finalizado_comprar")
-            contenedor_carrito_js.innerHTML =`
-            <div >
-                <span>No tiene articulos en su carrito </span>
-            </div>
-            `;
-        } */
     }
-
-
-
-
 }
