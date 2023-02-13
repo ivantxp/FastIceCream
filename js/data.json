@@ -162,7 +162,7 @@
     {"id":21,
     "categoria": "frutas a la crema",
     "sabor": "Frutillas con crema chantilly",
-    "descripcion":"Helados de crema chantilly acompañado con frutillas.",
+    "descripcion":"Helado de crema chantilly acompañado con frutillas.",
     "img":"./img/sabores/frutillas_crema_chantilly.jpg",
     "precio":120
     },
@@ -202,7 +202,7 @@
     {"id":26,
     "categoria": "sambayones",
     "sabor": "Sambayón",
-    "descripcion":"Crema helada elaborada en base a la receta Italina de dulce de sambayón.",
+    "descripcion":"Crema helada elaborada en base a la receta Italiana de dulce de sambayón.",
     "img":"./img/sabores/sambayon.jpg",
     "precio":100
     },

@@ -14,7 +14,6 @@ fetch('./js/data.json')
         .then((helados_extraccion)=>{programa(helados_extraccion)})
         .catch((error)=>console.log(error))
 
-
 function programa(helados){
         
     let carrito = [];
@@ -120,7 +119,7 @@ function programa(helados){
     }
 
     mostrar_producto(helados);
-
+/* 
     function disableScroll(){  
         let x = window.scrollX;
         let  y = window.scrollY;
@@ -129,7 +128,7 @@ function programa(helados){
     
     function enableScroll(){  
         window.onscroll = null;
-    } 
+    }  */
     
     function limpiesa_input(){
         busqueda = "";
@@ -173,6 +172,8 @@ function programa(helados){
         let quitar_scroll = document.body
         quitar_scroll.classList.toggle("quitar_scroll")
         contenedor_carrito_js.classList.toggle("mostrar");
+        contenedor_carrito_js.classList.toggle("ocultar");
+
         
         if(contenedor_carrito_js.className.includes("mostrar")){
             if(carrito.length != 0){
@@ -433,9 +434,6 @@ function programa(helados){
     function envio_info(){
         let ventana_envio = document.createElement("div")
         ventana_envio.className ="ventana_finalizado_comprar"
-        let html_insert="" 
-
-        visualisacion_carrito()
 
         Swal.fire({
             title: '<h3 class="titulo_alerta">Quiere confirmar su compra</h3>',
@@ -445,8 +443,8 @@ function programa(helados){
             confirmButtonColor: '#00aa14',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Si quiero',
-            cancelmButtonText: 'Volver al carrito',
-            background: '#000000 url("../img/fondo2.jpg")',
+            cancelButtonText: 'Seguir Comprando',
+            background: '#000000 url("./img/fondo2.jpg")',
 
             }).then((result) => {
             if (result.isConfirmed) {
@@ -459,18 +457,19 @@ function programa(helados){
                     imageHeight: 400,
                     imageAlt: 'Custom image',
                     confirmButtonColor: '#00aa14',
-                    background: '#000000 url("../img/fondo2.jpg")',
+                    background: '#000000 url("./img/fondo2.jpg")',
                 })
                 realizar_comprar()
                 }
             })
-
+        
         function realizar_comprar(){
-
             localStorage.clear();
             contenedor_carrito_js.innerText ="";
             carrito = []
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
         }
+        visualisacion_carrito()
+
     }
 }
