@@ -27,10 +27,10 @@ function programa(helados){
 
     let input_buscar_html = document.getElementById("input_buscar");
     input_buscar_html.oninput  = visualisacion_limpiar
+    input_buscar_html.onchange = realizar_busqueda
 
     let contenedor_carrito_js =document.getElementById("contenedor_carrito");
     contenedor_carrito_js.onclick = click_fuera
-
 
     let boton_buscar_js = document.getElementById("boton_buscar");
     boton_buscar_js.onclick = realizar_busqueda;
@@ -68,7 +68,7 @@ function programa(helados){
         contenedor_principal.innerHTML = "";
         productos.forEach(({id,categoria,img,sabor,descripcion,precio})=>{
             let contenedor_producto = document.createElement("article");
-            contenedor_producto.className = "articulo_conedor";
+            contenedor_producto.className = "articulo_contedor";
             let color_informacion ;
             if(categoria == "chocolates"){
                 color_informacion = "chocolate";
@@ -93,7 +93,7 @@ function programa(helados){
                         <div>
                             <h4>$${precio}
                             </h4>
-                            <button class="boton_agregar" id=elimnar${id}> agregar</button>
+                            <button class="boton_agregar" id=elimnar${id}>Agregar al carrito</button>
                         </div>
                     </div>
                 `;
@@ -223,7 +223,7 @@ function programa(helados){
                         
                         <img id="cerrar_carrito" src="./img/close.png" alt="cerrar">
                         <h2>
-                            Mis Articulos
+                            Mis Artículos
                         </h2>
                         <div class="contendor_articulos">
                             ${contenedor_carrito_js.innerHTML}
@@ -231,7 +231,7 @@ function programa(helados){
                         </div>
                         <div class="total_compra">
                                 <button  id=finalizar_compra>Finalizar comprar</button>
-                                <span> Total</span>
+                                <span> Total =</span>
                                 <span>$${total} </span>
                             </div>
                     </section>
@@ -372,16 +372,15 @@ function programa(helados){
             carrito[carrito.length-1].cantidad = 1;
         }
         renderisado_carrito();
-        function texto_toastify(){
-            
-            return 
-        }       
+        
         Toastify({
-            text: `Se a agregado un helado sabor ${helados[id_extraido].sabor}`,
-            duration: 1000,
+            text:  `Se a agregado un helado sabor ${helados[id_extraido].sabor}`,
+
+            duration: 2000,
             //destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
             close: true,
+            className: "toastify_estilo",
             gravity: "bottom", // `top` or `bottom`
             position: "right", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover

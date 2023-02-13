@@ -170,7 +170,7 @@
     {"id":22,
     "categoria": "frutas a la crema",
     "sabor": "Pasión de maracuyá",
-    "descripcion":"Elaborado con una base de crema americana, equilibrado queso mascarpone y aderezado con puré de maracuyá.",
+    "descripcion":"Elaborado con crema americana, queso mascarpone y aderezado con puré de maracuyá.",
     "img":"./img/sabores/pasion_maracuya.jpg",
     "precio":110
     },

@@ -11,7 +11,7 @@
     
     //left: -100vw;
     transition: transform 300ms ease-out;
-    transform: translate(-100vw, 0px);
+    transform: translate(100vw, 0px);
 }
 
 .mostrar{
@@ -125,10 +125,21 @@ body{
                 color: rgb(144, 54, 117);
                 font-family: 'Knewave', cursive;
                 -webkit-text-stroke: 1px rgb(255, 255, 255);
+                transition: transform 50ms linear,color 50ms linear;
+
+                &:hover{
+                    transform: translate(100px, -152px);
+                    color: rgb(223, 85, 182);
+                    cursor:pointer;
+                    -webkit-text-stroke:2px rgb(255, 255, 255);
+                } 
+                &:active{
+                    transform: translate(100px, -151px);
+                    color: rgb(245, 22, 100);
+                }
+                
             } 
-            &:hover{
-                transform: translate(0,-2px);
-            }
+            
         } 
         #contenedor_carrito{
             display: flex;
@@ -169,7 +180,7 @@ body{
                     margin: 0 auto;
                     width: 300px;
                     border-radius: 0 5px 5px 0;
-                    color: rgb(144, 54, 117);
+                    color: rgb(178, 61, 143);
                     font-family: 'Knewave', cursive;
                     -webkit-text-stroke: 1px rgb(0, 0, 0);
                     font-size: 50px;
@@ -194,8 +205,8 @@ body{
                         margin: 5px 0;
                         border-radius: 10px ;
                         .img_carrito{
-                            width: 90px;
-                            height: 90px;
+                            width: 100px;
+                            height: 100px;
                             border-radius: 10px 0 0 10px;
                         }
                         .info_articulo{
@@ -220,7 +231,7 @@ body{
                                     align-items: center;
                                     text-align: center;
                                     padding: auto 0;
-                                    background-color: #bf26a3;
+                                    background-color: #afeeff;
                                     border-radius: 10px; 
                                     height: 22px;
                                     font-family: 'Itim', cursive;
@@ -235,9 +246,19 @@ body{
                                 }
                                 .botones_quitar{
                                     margin: 0 0 0 5px  ;
+                                    border-bottom: solid 2px rgba(255, 255, 255, 0);
+                                    border-radius: 5px;
                                     img{
                                         width: 20px;
                                         height: 20px;
+                                    }
+                                    transition: border-bottom 50ms linear;
+
+                                    &:hover{
+                                        border-bottom: solid black 2px;
+                                    }
+                                    &:active{
+                                        border-bottom: solid rgb(169, 0, 0) 2px;
                                     }
                                 }
                                 button{
@@ -268,13 +289,15 @@ body{
                     #finalizar_compra{
                         border: transparent;
                         margin:  0 50px;
-                        padding: 10px;
+                        padding: 5px 15px;
                         border-radius: 15px;
+                        font-family: 'Itim', cursive;
+                        font-size: 20px;
                         background: linear-gradient(
                             0deg,
                             rgba(86, 196, 67, 1) 0%,
                             rgb(213, 250, 221) 48%,
-                            rgba(32, 178, 7, 1) 98%
+                            rgb(12, 191, 204) 98%
                         );
                         background-blend-mode: normal;
                         transition: transform 50ms ease-out;
@@ -304,7 +327,7 @@ body{
         justify-self: stretch;
         display: flex;
         flex-direction: column;
-        background-color: rgb(255, 255, 242);
+        background-color: rgb(254, 255, 233);
         width: 98%;
         min-height: 80vh;
         margin: 0 0  25px 0;
@@ -324,7 +347,7 @@ body{
                 width: 300px;
                 height: 30px;
                 margin: 10px 0;
-                border-radius: 5px;
+                border-radius: 10px;
             }
             #limpiar_busqueda{
                 border: none;
@@ -348,9 +371,12 @@ body{
                     rgba(152, 145, 250, 1) 100%
                 );
                 background-blend-mode: normal;
+                transition: box-shadow 50ms linear, transform 50ms linear;
+
                 &:hover{
-                    transform: translate(0, -2px);
-                    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.49);
+                    transform: translate(-2px, -2px);
+                    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.49);
+
                 }
                 &:active{
                     background: linear-gradient(
@@ -372,18 +398,17 @@ body{
             justify-content: center;
             align-items: center;
             height: 100%;
-            .articulo_conedor{
+            .articulo_contedor{
                 display: flex;
                 justify-content:space-around ;
-                border-radius: 5px;
-                width: 390px;
-                height: 140px;
-                margin: 5px 5px;
-                padding: 7px;  
+                border-radius: 10px;
+                width: 400px;
+                height: 160px;
+                margin: 10px;
                 img{
                     width: 130px;
-                    height: 138px;
-                    border-radius: 5px 0 0 5px;
+                    height: 155px;
+                    border-radius: 10px 0 0 10px;
                 }
                 .informacion{
                     display:flex ;
@@ -391,27 +416,58 @@ body{
                     justify-content: space-between;
                     //background-color: green;
                     width: 100%; 
-                    height: 128px;
-                    border-radius: 0 5px 5px 0;
+                    height: 145px;
+                    border-radius: 0 10px 10px 0;
                     padding: 5px ;
                     .productos{
                         font-family: 'Rock Salt', cursive;
                         font-stretch: ultra-condensed;
-                        font-size: 16px;
+                        font-size: 15px;
                         line-height:25px;
                         border-bottom: solid black 1px;
                         color: rgb(0, 0, 0);
+                        padding: 5px 0;
                     }
                     p{
+                        display: flex;
+                        align-items: center;
                         margin: auto;
                         font-family: 'Itim', cursive;
-                        font-size: 17px;
+                        font-size: 15px;
                         border-bottom: solid black 1px;
-                        margin: 5px 0;
+                        padding: 5px 0;
+                        height: 100%;
                     }
                     div{
                         display: flex;
+                        align-items: end;
                         justify-content: space-between;
+                        padding: 5px;
+                        height: 100%;
+                        h4{
+                            font-family: 'Itim', cursive;
+                            font-size: 25px;
+                        }
+                        .boton_agregar{
+                            border: transparent;
+                            font-family: 'Itim', cursive;
+                            font-size: 18px;
+                            background: rgb(255, 255, 255);
+                            background-blend-mode: normal;
+                            padding: 5px 10px;
+                            border-radius: 10px;
+                            transition: box-shadow 100ms linear,background-color 10ms linear;
+                            &:hover{ 
+                                transform: translate(0, -2px);
+                                box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.49);
+                            }
+                            &:active{
+                                background-color: rgb(145, 252, 177);
+                                transform: translate(0, 0);
+                                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
+                            }
+                        }
+
                     }  
                 } 
                 .chocolate{background-color: rgb(224, 218, 218)}; 
@@ -437,9 +493,6 @@ body{
         }
     }
 }
-//https://www.deathwishcoffee.com/products/gingerdead-coffee
-
-
 
 .ventana_finalizado_comprar{
     width: 100%;
@@ -456,7 +509,10 @@ body{
         color: #00aa14;
     }
 
-
+.toastify_estilo{
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+}
 
 header{
     grid-area: encabesado;
