@@ -468,8 +468,11 @@ function programa(helados){
             contenedor_carrito_js.innerText ="";
             carrito = []
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
+
         }
         visualisacion_carrito()
+
+
 
     }
 }
