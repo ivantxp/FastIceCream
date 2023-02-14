@@ -35,15 +35,15 @@
 body {
   overflow-x: hidden;
   display: grid;
-  grid-template-areas: "filtros encabesado" "filtros productos ";
+  grid-template-areas: "encabesado filtros" "productos filtros";
   justify-items: center;
-  grid-template-columns: 220px auto;
+  grid-template-columns: auto 220px;
   grid-template-rows: auto auto;
   background-image: url("../img/fondo2.jpg");
   background-attachment: fixed;
 }
 body header {
-  grid-template-columns: 200px auto;
+  grid-template-columns: auto 220px;
   grid-template-rows: auto auto;
   background-image: url("../img/fondo2.jpg");
   background-size: auto auto;
@@ -53,6 +53,7 @@ body header {
   width: 100%;
   height: 100px;
   padding: 5px 5px;
+  text-align: center;
 }
 body header .text_logo {
   color: rgb(144, 54, 117);
@@ -66,23 +67,29 @@ body .nav_filtros {
   flex-direction: column;
   position: sticky;
   height: 100vh;
-  width: 100%;
+  width: 195px;
   border-radius: 10px;
   top: 0;
   color: white;
   z-index: 100;
+  margin: 0 0 0 auto;
 }
 body .nav_filtros .filtros {
-  padding: 90px 0 0 0;
+  border-radius: 10px 0 0 0;
+  padding: 0 0 0 20px;
+}
+body .nav_filtros .precios {
+  border-radius: 0 0 0 10px;
+  padding: 0 0 20px 15px;
 }
 body .nav_filtros .filtros, body .nav_filtros .precios {
-  margin: 0 0 0 15px;
+  background-color: rgb(253, 253, 236);
 }
 body .nav_filtros .filtros h3, body .nav_filtros .precios h3 {
   margin: 15px 0 5px;
   font-family: "Itim", cursive;
   font-size: 20px;
-  color: rgb(255, 158, 226);
+  color: rgb(140, 0, 98);
 }
 body .nav_filtros .filtros ul, body .nav_filtros .precios ul {
   display: flex;
@@ -92,16 +99,17 @@ body .nav_filtros .filtros ul, body .nav_filtros .precios ul {
 body .nav_filtros .filtros ul li, body .nav_filtros .precios ul li {
   margin: 0 10px;
   font-family: "Itim", cursive;
-  color: rgb(250, 234, 154);
+  color: rgb(133, 64, 0);
 }
 body .nav_filtros .filtros ul li input, body .nav_filtros .precios ul li input {
   margin: 5px;
 }
 body .nav_filtros #mostrar_carrito {
   all: unset;
-  width: 130px;
-  margin: auto auto 65px auto;
+  width: 120px;
+  margin: 15px auto 70px;
   animation: cssAnimation_1 1000ms infinite ease-in;
+  cursor: pointer;
 }
 @keyframes cssAnimation_1 {
   to {
@@ -114,7 +122,7 @@ body .nav_filtros #mostrar_carrito .carrito {
 }
 body .nav_filtros #mostrar_carrito .cantidad_carrito {
   position: absolute;
-  transform: translate(100px, -150px);
+  transform: translate(95px, -140px);
   font-size: 40px;
   color: rgb(144, 54, 117);
   font-family: "Knewave", cursive;
@@ -122,16 +130,16 @@ body .nav_filtros #mostrar_carrito .cantidad_carrito {
   transition: transform 50ms linear, color 50ms linear;
 }
 body .nav_filtros #mostrar_carrito .cantidad_carrito:hover {
-  transform: translate(100px, -152px);
+  transform: translate(95px, -142px);
   color: rgb(223, 85, 182);
   cursor: pointer;
   -webkit-text-stroke: 2px rgb(255, 255, 255);
 }
 body .nav_filtros #mostrar_carrito .cantidad_carrito:active {
-  transform: translate(100px, -151px);
+  transform: translate(95px, -141px);
   color: rgb(245, 22, 100);
 }
-body .nav_filtros #contenedor_carrito {
+body #contenedor_carrito {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,8 +150,9 @@ body .nav_filtros #contenedor_carrito {
   background-color: rgba(0, 0, 0, 0.6117647059);
   color: black;
   overflow: scroll;
+  z-index: 100;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor {
+body #contenedor_carrito #sub_contenedor {
   background-color: rgb(247, 247, 247);
   display: flex;
   flex-direction: column;
@@ -153,22 +162,22 @@ body .nav_filtros #contenedor_carrito #sub_contenedor {
   padding: 10px;
   border-radius: 15px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor #cerrar_carrito {
+body #contenedor_carrito #sub_contenedor #cerrar_carrito {
   width: 20px;
   height: 20px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .img_sin_articulo {
+body #contenedor_carrito #sub_contenedor .img_sin_articulo {
   width: 200px;
   height: 200px;
   margin: 0 auto;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .text_sin_articulo {
+body #contenedor_carrito #sub_contenedor .text_sin_articulo {
   font-size: 50px;
   font-family: "Itim", cursive;
   text-align: center;
   margin: 20px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor h2 {
+body #contenedor_carrito #sub_contenedor h2 {
   margin: 0 auto;
   width: 300px;
   border-radius: 0 5px 5px 0;
@@ -177,7 +186,7 @@ body .nav_filtros #contenedor_carrito #sub_contenedor h2 {
   -webkit-text-stroke: 1px rgb(0, 0, 0);
   font-size: 50px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos {
+body #contenedor_carrito #sub_contenedor .contendor_articulos {
   display: flex;
   justify-content: center;
   border-top: 2px solid;
@@ -191,25 +200,25 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos {
   margin: 10px auto;
   padding: 30px 0;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito {
   display: flex;
   background-color: #ffffff;
   margin: 5px 0;
   border-radius: 10px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .img_carrito {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .img_carrito {
   width: 100px;
   height: 100px;
   border-radius: 10px 0 0 10px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo {
   margin: 10px 0 5px 5px;
   width: 170px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .sabor_carrito {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .sabor_carrito {
   font-family: "Rock Salt", cursive;
   font-stretch: ultra-condensed;
   font-size: 16px;
@@ -217,11 +226,11 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .arti
   border-bottom: solid black 1px;
   color: rgb(0, 0, 0);
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito {
   display: flex;
   margin: 5px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div {
   display: flex;
   align-items: center;
   text-align: center;
@@ -231,35 +240,35 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .arti
   height: 22px;
   font-family: "Itim", cursive;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div span, body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_restar, body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_agregar {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div span, body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_restar, body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_agregar {
   font-size: 20px;
   width: 25px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div span:hover, body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_restar:hover, body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_agregar:hover {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div span:hover, body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_restar:hover, body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito div .class_boton_agregar:hover {
   cursor: pointer;
   color: aquamarine;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar {
   margin: 0 0 0 5px;
   border-bottom: solid 2px rgba(255, 255, 255, 0);
   border-radius: 5px;
   transition: border-bottom 50ms linear;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar img {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar img {
   width: 20px;
   height: 20px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar:hover {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar:hover {
   border-bottom: solid black 2px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar:active {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito .botones_quitar:active {
   border-bottom: solid rgb(169, 0, 0) 2px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito button {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .info_articulo .accion_carrito button {
   border: none;
   background-color: transparent;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .sub_total {
+body #contenedor_carrito #sub_contenedor .contendor_articulos .articulo_carrito .sub_total {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,14 +279,14 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .contendor_articulos .arti
   -webkit-text-stroke: 1px rgb(0, 0, 0);
   font-size: 30px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra {
+body #contenedor_carrito #sub_contenedor .total_compra {
   display: flex;
   justify-content: center;
   padding: 20px;
   width: 500px;
   border-radius: 5px;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra #finalizar_compra {
+body #contenedor_carrito #sub_contenedor .total_compra #finalizar_compra {
   border: transparent;
   margin: 0 50px;
   padding: 5px 15px;
@@ -288,15 +297,15 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra #finalizar_c
   background-blend-mode: normal;
   transition: transform 50ms ease-out;
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra #finalizar_compra:hover {
+body #contenedor_carrito #sub_contenedor .total_compra #finalizar_compra:hover {
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.49);
   transform: translate(0, -2px);
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra #finalizar_compra:active {
+body #contenedor_carrito #sub_contenedor .total_compra #finalizar_compra:active {
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.792);
   transform: translate(0, -1px);
 }
-body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra span {
+body #contenedor_carrito #sub_contenedor .total_compra span {
   color: rgb(144, 54, 117);
   font-family: "Knewave", cursive;
   -webkit-text-stroke: 1px rgb(0, 0, 0);
@@ -304,13 +313,14 @@ body .nav_filtros #contenedor_carrito #sub_contenedor .total_compra span {
   width: 100px;
 }
 body main {
-  justify-self: stretch;
   display: flex;
+  justify-self: stretch;
+  justify-content: flex-start;
   flex-direction: column;
   background-color: rgb(254, 255, 233);
   width: 98%;
   min-height: 80vh;
-  margin: 0 0 25px 0;
+  margin: 0 0 25px 25px;
   border-radius: 10px;
 }
 body main .contendor_buscar {
@@ -458,10 +468,10 @@ body main #contenedor_principal .articulo_contedor .sambayon {
 }
 body main .luna {
   position: fixed;
-  width: 700px;
+  width: 800px;
   z-index: -1;
-  bottom: -487px;
-  left: -240px;
+  top: -33px;
+  right: -300px;
   animation: cssAnimation_0 40000ms infinite linear;
 }
 @keyframes cssAnimation_0 {
