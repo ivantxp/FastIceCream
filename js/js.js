@@ -325,20 +325,25 @@ function programa(helados){
 
     function agregar_carrito(e){
         let id_extraido = Number(extractor_numero(e.target.id));
+        let indice = carrito.indexOf(carrito.find(({id})=>id==id_extraido));
+
         if(carrito.find(({id})=> id == id_extraido)){
-            let indice = carrito.indexOf(carrito.find(({id})=>id==id_extraido));
             carrito[indice].cantidad++ ;
         }else{ 
             carrito.push(helados.find(({id})=>id==id_extraido));
             carrito[carrito.length-1].cantidad = 1;
         }
         renderisado_carrito();
-        limpiar_busqueda.classList.toggle("ocultar_x") 
-
-        console.log(carrito[id_extraido].sabor)
+        limpiar_busqueda.classList.toggle("ocultar_x")
+        
+        console.log(id_extraido)
+        console.log(indice) 
+        console.log(carrito)
+        console.log(helados[id_extraido-1].sabor)
         
         Toastify({
-            text:  `Se a agregado un helado sabor ${carrito[id_extraido].sabor}`,
+            text:  `Se a agregado un helado sabor ${helados[id_extraido-1].id} ${helados[id_extraido-1].sabor} `,
+            //${carrito[id_extraido-1].sabor}
             duration: 2000,
             //destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
