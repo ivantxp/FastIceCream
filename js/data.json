@@ -57,7 +57,7 @@
     
     {"id":8,
     "categoria": "chocolates",
-    "sabor": "chocolate",
+    "sabor": "Chocolate",
     "descripcion":"Helado de chocolate clásico elaborado con los mejores cacaos sudamericanos.",
     "img":"./img/sabores/chocolate.jpg",
     "precio":100

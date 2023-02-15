@@ -29,6 +29,13 @@
 <body id="boddy">
     <header>
         <h1 class="text_logo">Fast Ice Cream</h1> 
+        <div class="contendor_buscar">
+            <input id="input_buscar" type="text" placeholder="Busca aquí tu helado favorito">
+            <button type="button" id="boton_buscar"> Buscar</button>
+
+            <button class="ocultar_x" type="button" id="limpiar_busqueda"><img src="./img/close.png" alt="cerrar"></button>
+        </div>
+        
     </header>
     <nav  class="nav_filtros">
         <button type="button" id="mostrar_carrito" class="carrito_boton" >cacccccccrrito</button>  
@@ -75,22 +82,12 @@
                 </li>
             </ul>
         </div>
-        <div id="contenedor_carrito" class="ocultar">
-        </div>
-        
-    
     </nav>
-   
     <main>
 
+        <div id="contenedor_carrito" class="ocultar"></div> <!-- ventana desplegable de carrito -->
 
-        <div class="contendor_buscar">
-            <input id="input_buscar" type="text" placeholder="Busca aquí tu helado favorito">
-            <button type="button" id="boton_buscar"> Buscar</button>
-
-            <button class="ocultar_x" type="button" id="limpiar_busqueda"><img src="./img/close.png" alt="cerrar"></button>
-        </div>
-        
+      
         <section class="productos" id="contenedor_principal" ></section>
         <img class="luna" src="./img/luna.png" alt="">
         

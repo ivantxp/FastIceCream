@@ -1,14 +1,3 @@
-
-//*************************************************************************************************************************************************
-/* let helados=[]
-fetch('./js/data.json')
-    .then((resp)=>resp.json())
-    .then((data)=>{
-        helados = data
-        mostrar_producto(helados)
-    }) 
- */
-
 fetch('./js/data.json')
         .then((resp)=>resp.json())
         .then((helados_extraccion)=>{programa(helados_extraccion)})
@@ -51,16 +40,6 @@ function programa(helados){
     let check_precios_altos = document.getElementById("alto_bajo");
     check_precios_altos.onclick = filtrado_precios_altos;
 
-    /* const DateTime = luxon.DateTime; //aplicacion de luxon
-    const now = DateTime.now()
-    console.log(DateTime.fromISO("2017-05-15T20:15:00"))
-    console.log(DateTime.now().toString())
-
-    let  dt = DateTime.now()
-    let hora_compra = dt.toLocaleString(DateTime.DATETIME_MED)
-    console.log(dt.hour + ":" + dt.minute)
-    console.log(hora_compra)
-    console.log(hora_compra.plus({ hours: 3, minutes: 2 })) */
     //Funciones*******************************************************************************************************************************************************
 
     function mostrar_producto(productos){//funtion para crear caja contenedores de productos
@@ -118,18 +97,7 @@ function programa(helados){
         } 
     }
 
-    mostrar_producto(helados);
-/* 
-    function disableScroll(){  
-        let x = window.scrollX;
-        let  y = window.scrollY;
-        window.onscroll = function(){ window.scrollTo(x, y) };
-    }
-    
-    function enableScroll(){  
-        window.onscroll = null;
-    }  */
-    
+    mostrar_producto(helados);   
     function limpiesa_input(){
         busqueda = "";
         input_buscar_html.value = "";
@@ -166,7 +134,6 @@ function programa(helados){
             filtrado_check();
             };  */
     }
-
     function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
         let quitar_scroll = document.body
         quitar_scroll.classList.toggle("quitar_scroll")
@@ -191,7 +158,6 @@ function programa(helados){
             `   
         }
     };
-    
     function renderisado_carrito(){
         sub_total = [];
         contenedor_carrito_js.innerHTML = "";
@@ -227,7 +193,6 @@ function programa(helados){
                         </h2>
                         <div class="contendor_articulos">
                             ${contenedor_carrito_js.innerHTML}
-
                         </div>
                         <div class="total_compra">
                                 <button  id=finalizar_compra>Finalizar comprar</button>
@@ -242,7 +207,6 @@ function programa(helados){
             let botones_restar = document.querySelectorAll(`.class_boton_restar`);    
             let botones_eliminar_articulos = document.querySelectorAll(`.botones_quitar`);
             let finalizado_compra = document.getElementById("finalizar_compra");
-            //let sub_contenedor = document.getElementById("sub_contenedor")
 
             cerrar_carrito.onclick = visualisacion_carrito;
             botones_sumar.forEach((el)=>el.onclick = sumar_cantidad);
@@ -251,8 +215,9 @@ function programa(helados){
             finalizado_compra.onclick = envio_info;
 
             localStorage.setItem("producto_usuario",JSON.stringify(carrito));
-            
+
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
+
         }else{
             contenedor_carrito_js.innerHTML =`
                     <section id="sub_contenedor"> 
@@ -264,14 +229,11 @@ function programa(helados){
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
             let cerrar_carrito = document.getElementById("cerrar_carrito");
             cerrar_carrito.onclick = visualisacion_carrito;
-
         }   
     };
 
     function click_fuera(e){
         if(e.target.id == "contenedor_carrito"){
-                    //alert(e.target.id)
-
             visualisacion_carrito()
         }
     }
@@ -372,10 +334,10 @@ function programa(helados){
             carrito[carrito.length-1].cantidad = 1;
         }
         renderisado_carrito();
-        
+        limpiar_busqueda.classList.toggle("ocultar_x") 
+
         Toastify({
             text:  `Se a agregado un helado sabor ${helados[id_extraido].sabor}`,
-
             duration: 2000,
             //destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
@@ -389,7 +351,6 @@ function programa(helados){
             },
             onClick: function(){} // Callback after click
         }).showToast();
-
     }
 
     function elminar_articulo(e){
