@@ -14,7 +14,7 @@
 
 .mostrar {
   transition: transform 300ms ease-out;
-  transform: translate(0, 0px);
+  transform: translate(-100vw, 0px);
 }
 
 .quitar_scroll {
@@ -140,13 +140,13 @@ body .nav_filtros #mostrar_carrito .cantidad_carrito:active {
   color: rgb(245, 22, 100);
 }
 body #contenedor_carrito {
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 114vw;
+  height: 104vh;
   background-color: rgba(0, 0, 0, 0.6117647059);
   color: black;
   overflow: scroll;
