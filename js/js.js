@@ -324,7 +324,6 @@ function programa(helados){
     }
 
     function agregar_carrito(e){
-        contenedor_carrito_js.innerText ="";
         let id_extraido = Number(extractor_numero(e.target.id));
         if(carrito.find(({id})=> id == id_extraido)){
             let indice = carrito.indexOf(carrito.find(({id})=>id==id_extraido));
@@ -336,8 +335,10 @@ function programa(helados){
         renderisado_carrito();
         limpiar_busqueda.classList.toggle("ocultar_x") 
 
+        console.log(carrito[id_extraido].sabor)
+        
         Toastify({
-            text:  `Se a agregado un helado sabor ${helados[id_extraido].sabor}`,
+            text:  `Se a agregado un helado sabor ${carrito[id_extraido].sabor}`,
             duration: 2000,
             //destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
@@ -397,10 +398,8 @@ function programa(helados){
 
         Swal.fire({
             title: '<h3 class="titulo_alerta">Quiere confirmar su compra</h3>',
-            icon: 'pregunta',
-            showconfirmbutton:true,
             showCancelButton: true,
-            confirmButtonColor: '#00aa14',
+            confirmButtonColor: '#00aa14',            
             cancelButtonColor: '#d33',
             confirmButtonText: 'Si quiero',
             cancelButtonText: 'Seguir Comprando',
