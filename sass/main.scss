@@ -72,7 +72,7 @@ body{
             justify-content: center;
             align-items: center;
             padding: 0 ;
-            border-radius: 10px 10px 0 0 ;
+            border-radius: 15px 15px 0 0 ;
             #input_buscar{
                 width: 300px;
                 height: 30px;
@@ -102,10 +102,10 @@ body{
                 );
                 background-blend-mode: normal;
                 transition: box-shadow 50ms linear, transform 50ms linear;
-
                 &:hover{
                     transform: translate(-2px, -2px);
                     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.49);
+                    cursor:pointer;
 
                 }
                 &:active{
@@ -135,11 +135,11 @@ body{
         z-index: 100;
         margin: 0  0 0 auto ;
         .filtros{
-            border-radius: 10px 0 0 0 ;
+            border-radius: 15px 0 0 0 ;
             padding: 0 0  0 20px;
         }
         .precios{
-            border-radius: 0 0 0 10px ;
+            border-radius: 0 0 0 15px ;
             padding:  0  0 20px 15px;
 
         }
@@ -162,6 +162,14 @@ body{
                     color: rgb(133, 64, 0);
                     input{
                         margin:5px ;
+                        &:hover{
+                            cursor:pointer;
+                        }
+                    }
+                    label{
+                        &:hover{
+                            cursor:pointer;
+                        }
                     }
                 }
             }
@@ -181,7 +189,6 @@ body{
             .carrito{
                 width: 100%;
                 height: 100%;
-                
             }
             .cantidad_carrito{
                 position: absolute;
@@ -204,17 +211,18 @@ body{
             } 
         } 
     }
-  
+
     main{
         display: flex;
         justify-self: center;
         justify-content: flex-start;
         flex-direction: column;
         background-color: rgb(254, 255, 233);
-        min-height: 80vh;
+        min-height: 74.5vh;
+        margin: 0 ;
         width: 98%;
         margin: 0 0 30px 30px;
-        border-radius: 0 0 10px 10px;
+        border-radius: 0 0 15px 15px;
         
         #contenedor_carrito{
             position:fixed;
@@ -306,15 +314,27 @@ body{
                                     align-items: center;
                                     text-align: center;
                                     padding: auto 0;
-                                    background-color: #afeeff;
-                                    border-radius: 10px; 
-                                    height: 22px;
                                     font-family: 'Itim', cursive;
+                                    .class_boton_restar{
+                                        border-radius: 10px 0 0 10px;
+                                    }
+                                    .class_boton_agregar{
+                                        border-radius: 0 10px 10px 0;
+                                    }
                                     span, .class_boton_restar, .class_boton_agregar{
                                         font-size: 20px;
                                         width: 25px;
+                                        height: 23px;
+                                        background-color: #afeeff;
+                                        transition: background-color 100ms linear;
+
                                         &:hover{
                                             cursor:pointer;
+                                            color: rgb(255, 255, 255);
+                                            background-color: #37d2fd;
+                                        }
+                                        &:active{
+                                            background-color: #5e7379;
                                             color: aquamarine;
                                         }
                                     }       
@@ -483,6 +503,19 @@ body{
                 .frutas_a_la_crema{background-color:rgb(180, 214, 43)};
                 .fruta_agua{background-color:rgb(8, 145, 140)};
                 .sambayon{background-color:rgb(244, 161, 8)};
+            }
+            .no_encontrado{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img{
+                    width: 200px;
+                }
+                p{
+                    color: rgb(144, 54, 117);
+                    font-family: 'Knewave', cursive;
+                    font-size: 30px;
+                }
             }
         } 
         .luna{

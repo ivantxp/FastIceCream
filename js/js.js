@@ -93,7 +93,12 @@ function programa(helados){
         }
         
         if(contenedor_principal.innerHTML == ""){
-            contenedor_principal.innerHTML = `<p >producto no encontrado</p>`;
+            contenedor_principal.innerHTML = `
+                <div class="no_encontrado">
+                    <img src="./img/no_encontrado.png" alt="producto no encontrado">
+                    <p >Producto no encontrado</p>
+                </div>
+            `;
         } 
     }
 
@@ -325,24 +330,21 @@ function programa(helados){
 
     function agregar_carrito(e){
         let id_extraido = Number(extractor_numero(e.target.id));
-        let indice = carrito.indexOf(carrito.find(({id})=>id==id_extraido));
-
+        let indice
         if(carrito.find(({id})=> id == id_extraido)){
+            indice = carrito.indexOf(carrito.find(({id})=>id==id_extraido));
             carrito[indice].cantidad++ ;
         }else{ 
             carrito.push(helados.find(({id})=>id==id_extraido));
             carrito[carrito.length-1].cantidad = 1;
+            indice = carrito.length-1
         }
         renderisado_carrito();
-        limpiar_busqueda.classList.toggle("ocultar_x")
-        
-        console.log(id_extraido)
-        console.log(indice) 
-        console.log(carrito)
-        console.log(helados[id_extraido-1].sabor)
-        
+//        limpiar_busqueda.classList.toggle("ocultar_x")  
+        //console.log(carrito[indice].id)
+
         Toastify({
-            text:  `Se a agregado un helado sabor ${helados[id_extraido-1].id} ${helados[id_extraido-1].sabor} `,
+            text:  `Se a agregado un helado sabor  ${carrito[indice].sabor} `,
             //${carrito[id_extraido-1].sabor}
             duration: 2000,
             //destination: "https://github.com/apvarun/toastify-js",
@@ -360,7 +362,6 @@ function programa(helados){
     }
 
     function elminar_articulo(e){
-        console.log(e.target.id)
         contenedor_carrito_js.innerText ="";
         let id_extraido = Number(extractor_numero(e.target.id));
         let a_eliminar = carrito.indexOf(carrito.find(({id})=>id_extraido== id));
@@ -373,7 +374,6 @@ function programa(helados){
     }
 
     function restar_cantidad(e){
-        console.log(e.target.id)
 
         contenedor_carrito_js.innerText ="";
         let id_extraido = Number(extractor_numero(e.target.id));
