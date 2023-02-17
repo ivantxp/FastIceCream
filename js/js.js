@@ -40,6 +40,9 @@ function programa(helados){
     let check_precios_altos = document.getElementById("alto_bajo");
     check_precios_altos.onclick = filtrado_precios_altos;
 
+    let texto_logo = document.getElementById("text_logo")
+    texto_logo.onclick = ()=>{mostrar_producto(helados)}
+
     //Funciones*******************************************************************************************************************************************************
 
     function mostrar_producto(productos){//funtion para crear caja contenedores de productos
@@ -417,8 +420,8 @@ function programa(helados){
                     html: '<h4 class="sub_titulo_alerta">En breve nos contactaremos con usted</h4>',
                     //imageUrl: './img/enviado.png',
                     imageUrl:'./img/logo.png',
-                    imageWidth: 400,
-                    imageHeight: 400,
+                    imageWidth: 350,
+                    imageHeight: 350,
                     imageAlt: 'Custom image',
                     confirmButtonColor: '#00aa14',
                     background: '#000000 url("./img/fondo2.jpg")',
