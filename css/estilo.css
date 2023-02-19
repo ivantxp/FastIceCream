@@ -201,6 +201,16 @@ body .nav_filtros #mostrar_carrito .carrito {
   width: 100%;
   height: 100%;
 }
+body .nav_filtros #mostrar_carrito:hover .cantidad_carrito {
+  transform: translate(95px, -142px);
+  color: rgb(223, 85, 182);
+  cursor: pointer;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+}
+body .nav_filtros #mostrar_carrito:active .cantidad_carrito {
+  -webkit-text-stroke: 4px rgb(255, 186, 167);
+  color: rgb(245, 22, 100);
+}
 body .nav_filtros #mostrar_carrito .cantidad_carrito {
   position: absolute;
   transform: translate(95px, -140px);
@@ -209,16 +219,6 @@ body .nav_filtros #mostrar_carrito .cantidad_carrito {
   font-family: "Knewave", cursive;
   -webkit-text-stroke: 1px rgb(255, 255, 255);
   transition: transform 50ms linear, color 50ms linear;
-}
-body .nav_filtros #mostrar_carrito .cantidad_carrito:hover {
-  transform: translate(95px, -142px);
-  color: rgb(223, 85, 182);
-  cursor: pointer;
-  -webkit-text-stroke: 2px rgb(255, 255, 255);
-}
-body .nav_filtros #mostrar_carrito .cantidad_carrito:active {
-  transform: translate(95px, -141px);
-  color: rgb(245, 22, 100);
 }
 body main {
   display: flex;

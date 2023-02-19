@@ -143,6 +143,7 @@ function programa(helados){
             };  */
     }
     function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
+
         let quitar_scroll = document.body
         quitar_scroll.classList.toggle("quitar_scroll")
         contenedor_carrito_js.classList.toggle("mostrar");
@@ -434,7 +435,10 @@ function programa(helados){
             contenedor_carrito_js.innerText ="";
             carrito = []
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
-                    visualisacion_carrito();
+            visualisacion_carrito();
+            renderisado_carrito();
+
+            
         }
     }
 }
