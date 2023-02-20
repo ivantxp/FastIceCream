@@ -1,7 +1,7 @@
 fetch('./js/data.json')
         .then((resp)=>resp.json())
         .then((helados_extraccion)=>{programa(helados_extraccion)})
-        .catch((error)=>console.log(error))
+        .catch((error)=>console.log(error));
 
 function programa(helados){
         
@@ -14,11 +14,11 @@ function programa(helados){
     let contenedor_principal = document.getElementById("contenedor_principal");
 
     let input_buscar_html = document.getElementById("input_buscar");
-    input_buscar_html.oninput  = visualisacion_limpiar
-    input_buscar_html.onchange = realizar_busqueda
+    input_buscar_html.oninput  = visualisacion_limpiar;
+    input_buscar_html.onchange = realizar_busqueda;
 
     let contenedor_carrito_js =document.getElementById("contenedor_carrito");
-    contenedor_carrito_js.onclick = click_fuera
+    contenedor_carrito_js.onclick = click_fuera;
 
     let boton_buscar_js = document.getElementById("boton_buscar");
     boton_buscar_js.onclick = realizar_busqueda;
@@ -40,8 +40,8 @@ function programa(helados){
     let check_precios_altos = document.getElementById("alto_bajo");
     check_precios_altos.onclick = filtrado_precios_altos;
 
-    let texto_logo = document.getElementById("text_logo")
-    texto_logo.onclick = ()=>{mostrar_producto(helados)}
+    let texto_logo = document.getElementById("text_logo");
+    texto_logo.onclick = ()=>{mostrar_producto(helados)};
 
     //Funciones*******************************************************************************************************************************************************
 
@@ -81,7 +81,6 @@ function programa(helados){
             contenedor_principal.appendChild(contenedor_producto);  
         });
 
-
         let boton_agregar_carrito = document.querySelectorAll(`.boton_agregar`);//otra forma de seleccionar todo las clases
         boton_agregar_carrito.forEach((el)=>el.onclick =agregar_carrito);//otra forma de esuchar el evento
 
@@ -93,7 +92,7 @@ function programa(helados){
             mostrar_carrito.innerHTML=`<img class="carrito" src="./img/carrito_left.png" alt="">`;
             localStorage.clear();
             renderisado_carrito();
-        }
+        };
         
         if(contenedor_principal.innerHTML == ""){
             contenedor_principal.innerHTML = `
@@ -102,8 +101,8 @@ function programa(helados){
                     <p >Producto no encontrado</p>
                 </div>
             `;
-        } 
-    }
+        }; 
+    };
 
     mostrar_producto(helados);   
     function limpiesa_input(){
@@ -115,13 +114,13 @@ function programa(helados){
             }else{
                 filtrado_check();
             } */
-            limpiar_busqueda.classList.toggle("ocultar_x")
+        limpiar_busqueda.classList.toggle("ocultar_x");
     }
 
     function visualisacion_limpiar(){
         if(input_buscar_html.value!="") {
             if(limpiar_busqueda.className.includes("ocultar_x")){
-                limpiar_busqueda.classList.toggle("ocultar_x") 
+                limpiar_busqueda.classList.toggle("ocultar_x");
             }     
         }else{
             limpiar_busqueda.classList.toggle("ocultar_x") 
@@ -135,7 +134,7 @@ function programa(helados){
             categoria.toLowerCase().includes(busqueda)
             || sabor.toLowerCase().includes(busqueda)
             || descripcion.toLowerCase().includes(busqueda));
-            filtro_check=="" ? mostrar_producto(filtrados): filtrado_check();
+        filtro_check=="" ? mostrar_producto(filtrados): filtrado_check();
     /*      if(filtro_check==""){
             mostrar_producto(filtrados);
             }else{
@@ -143,20 +142,18 @@ function programa(helados){
             };  */
     }
     function visualisacion_carrito(){//muestra o oculta lo contenido en carrito
-
         let quitar_scroll = document.body
-        quitar_scroll.classList.toggle("quitar_scroll")
+        quitar_scroll.classList.toggle("quitar_scroll");
         contenedor_carrito_js.classList.toggle("mostrar");
         contenedor_carrito_js.classList.toggle("ocultar");
 
-        
         if(contenedor_carrito_js.className.includes("mostrar")){
             if(carrito.length != 0){
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">${carrito.length}</p>`;
                 }else{
                     mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> `;
-                }  
-        }
+                };
+        };
         if(contenedor_carrito_js.innerText ==""){
             contenedor_carrito_js.innerHTML =`
                 <section id="sub_contenedor"> 
@@ -165,7 +162,7 @@ function programa(helados){
                     <p class="text_sin_articulo">No tiene articulos en su carrito </p>
                 </section>
             `   
-        }
+        };
     };
     function renderisado_carrito(){
         sub_total = [];
@@ -210,7 +207,6 @@ function programa(helados){
                             </div>
                     </section>
                 `;
-            
             let cerrar_carrito = document.getElementById("cerrar_carrito")
             let botones_sumar = document.querySelectorAll(`.class_boton_agregar`); 
             let botones_restar = document.querySelectorAll(`.class_boton_restar`);    
@@ -234,38 +230,39 @@ function programa(helados){
                         <img class="img_sin_articulo" src="./img/agregado.png" alt="sin artuculos">
                         <p class="text_sin_articulo">No tiene articulos en su carrito </p>
                     </section>
-                ` 
+                `;
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
             let cerrar_carrito = document.getElementById("cerrar_carrito");
             cerrar_carrito.onclick = visualisacion_carrito;
-        }   
+        };
     };
 
     function click_fuera(e){
-        if(e.target.id == "contenedor_carrito"){
-            visualisacion_carrito()
-        }
+        e.target.id =="contenedor_carrito" && visualisacion_carrito();
+/*         if(e.target.id == "contenedor_carrito"){
+            visualisacion_carrito();
+        } */
     }
 
     function filtrado_precios_altos(){
         if(check_precios_altos.checked){
             helados.sort((x, y) => y.precio - x.precio);
-            check_precios_bajos.checked=false     
+            check_precios_bajos.checked=false  
         }else{
             helados.sort((x, y) => x.id - y.id);
-        }
-        filtrado_check()
+        };
+        filtrado_check();
     }
 
     function filtrado_precios_bajos(){
         if(check_precios_bajos.checked){
-            check_precios_altos.checked=false
+            check_precios_altos.checked=false;
             helados.sort((x, y) => x.precio - y.precio);
         }else{
             helados.sort((x, y) => x.id - y.id);
-        }
-        filtrado_check()
-    }
+        };
+        filtrado_check();
+    };
 
     function filtrado_check(){//funcion para chekear si check box esta selecionado o no(true o false)
         filtro_check=[];
@@ -298,22 +295,22 @@ function programa(helados){
             }; */
         }else{
             if(filtro_check==""){
-                if_bajo_alto()
+                if_bajo_alto();
                 mostrar_producto(filtrados);
                 
             }else{
-                if_bajo_alto()
+                if_bajo_alto();
                 busqueda_con_check = filtrados.filter(({categoria})=>filtro_check.includes(cambio_espacios(categoria)));
                 mostrar_producto(busqueda_con_check);       
-            }
-        }
+            };
+        };
     };
 
     function extractor_numero(cadena){//function para extrar el numeros de las clase creadas con js para comparar con los id de array helados
         let id_obtenido ="";
         for(i=0; i<cadena.length; i++){
             if(isNaN(cadena[i]) == false){
-                id_obtenido = id_obtenido + cadena[i]
+                id_obtenido = id_obtenido + cadena[i];
             };
         };
         return id_obtenido;
@@ -334,14 +331,14 @@ function programa(helados){
 
     function agregar_carrito(e){
         let id_extraido = Number(extractor_numero(e.target.id));
-        let indice
+        let indice;
         if(carrito.find(({id})=> id == id_extraido)){
             indice = carrito.indexOf(carrito.find(({id})=>id==id_extraido));
             carrito[indice].cantidad++ ;
         }else{ 
             carrito.push(helados.find(({id})=>id==id_extraido));
             carrito[carrito.length-1].cantidad = 1;
-            indice = carrito.length-1
+            indice = carrito.length-1;
         }
         renderisado_carrito();
 //        limpiar_busqueda.classList.toggle("ocultar_x")  
@@ -378,12 +375,11 @@ function programa(helados){
     }
 
     function restar_cantidad(e){
-
         contenedor_carrito_js.innerText ="";
         let id_extraido = Number(extractor_numero(e.target.id));
         if(carrito.find(({id})=> id == id_extraido )){
             let indice = carrito.indexOf(carrito.find(({id})=>id==id_extraido ));
-            carrito[indice].cantidad > 1 && carrito[indice].cantidad--    
+            carrito[indice].cantidad > 1 && carrito[indice].cantidad--;
     /*        if(carrito[indice].cantidad > 1){
                 carrito[indice].cantidad--;
             } */
@@ -402,8 +398,8 @@ function programa(helados){
     }
 
     function envio_info(){
-        let ventana_envio = document.createElement("div")
-        ventana_envio.className ="ventana_finalizado_comprar"
+        let ventana_envio = document.createElement("div");
+        ventana_envio.className ="ventana_finalizado_comprar";
 
         Swal.fire({
             title: '<h3 class="titulo_alerta">Quiere confirmar su compra</h3>',
@@ -427,16 +423,16 @@ function programa(helados){
                     confirmButtonColor: '#00aa14',
                     background: '#000000 url("./img/fondo2.jpg")',
                 })
-                realizar_comprar()
+                realizar_comprar();
                 }
             })  
         function realizar_comprar(){
             localStorage.clear();
             contenedor_carrito_js.innerText ="";
-            carrito = []
+            carrito = [];
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
             visualisacion_carrito();
             renderisado_carrito();           
-        }
-    }
-}
+        };
+    };
+};
