@@ -436,9 +436,7 @@ function programa(helados){
             carrito = []
             mostrar_carrito.innerHTML =`<img class="carrito"src="./img/carrito_left.png" alt=""> <p class="cantidad_carrito">`;
             visualisacion_carrito();
-            renderisado_carrito();
-
-            
+            renderisado_carrito();           
         }
     }
 }
