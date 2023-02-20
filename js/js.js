@@ -429,7 +429,7 @@ function programa(helados){
                 })
                 realizar_comprar()
                 }
-            })
+            })  
         function realizar_comprar(){
             localStorage.clear();
             contenedor_carrito_js.innerText ="";
