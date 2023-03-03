@@ -68,7 +68,7 @@ body header {
 body header #text_logo {
   color: rgb(144, 54, 117);
   font-family: "Knewave", cursive;
-  font-size: 50px;
+  font-size: 70px;
   font-weight: lighter;
   -webkit-text-stroke: 2px rgb(255, 255, 255);
   transition: transform 50ms linear, color 50ms linear;
