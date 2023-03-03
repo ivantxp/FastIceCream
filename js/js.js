@@ -30,7 +30,7 @@ function programa(helados){
     limpiar_busqueda.onclick = limpiesa_input;
 
     let check_categorias = document.getElementsByClassName("categorias");
-    for(const check_categoria of check_categorias){//para esuchar todos los click de ccategorias(tambien esta hecho con query selllector)
+    for(const check_categoria of check_categorias){//para esuchar todos los click de categorias(tambien esta hecho con query selllector)
         check_categoria.onclick = filtrado_check;
     };
 
@@ -40,8 +40,8 @@ function programa(helados){
     let check_precios_altos = document.getElementById("alto_bajo");
     check_precios_altos.onclick = filtrado_precios_altos;
 
-    let texto_logo = document.getElementById("text_logo");
-    texto_logo.onclick = ()=>{mostrar_producto(helados)};
+    let texto_logo = document.getElementById("text_logo");//refresca pagina
+    texto_logo.onclick = ()=>{ location.reload()};
 
     //Funciones*******************************************************************************************************************************************************
 
